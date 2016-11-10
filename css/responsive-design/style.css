@@ -3,8 +3,8 @@ body {
 }
 
 main {
-  width: 80%;
-  display: inline-block; 
+  display: inline-block;
+  width: 70%;
 }
 
 blockquote {
@@ -18,13 +18,16 @@ cite {
   margin-top: 10px;
 }
 
+#external-links {
+  display: inline-block;
+  width: 20%; 
+  min-width: 100px;
+  vertical-align: top;
+}
+
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-  width: 20%;
-  display: inline-block;
-  float: left;
-  min-width: 100px;
 }
 
 /* you're welcome to edit the
