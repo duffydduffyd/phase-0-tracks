@@ -1,0 +1,10 @@
+#work-experience, .job {
+  background: #e9e5dc;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.accomplishments li {
+  font-size: .7em;
+}
