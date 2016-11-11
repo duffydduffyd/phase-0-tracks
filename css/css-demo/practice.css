@@ -1,0 +1,39 @@
+
+
+#work-experience, .job {
+  background: #e9e5dc;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: helvetica;
+}
+
+.accomplishments li {
+  font-size: .7em;
+}
+
+.accomplishments:first-letter {
+    font-size: 20px;
+}
+
+/* modifying a child, section inside a section */
+
+#volunteer-experience .volunteer-gig {
+		background-color: red;
+}
+
+
+/* exploring when two things are modified 
+
+#work-experience, .job {
+  background: blue;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.accomplishments li {
+  font-size: 5em;
+}
+*/
