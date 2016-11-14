@@ -36,3 +36,41 @@ Pseudocode Part 1 Robot using an elevator. Denise Duffy 11/14/16
 		* If yes, and the door opens, roll or walk out of the elevator.
 
 * Give a high five to your buddy, again, can you even do that? Omg, if you can't that would be more pseudocode. 
+
+
+Peudocode: Part 2 Order a drink at a cafe.
+
+* Look at menu.
+
+* Choose drink you want. 
+
+* Move to order area. 
+
+* Is there a line? y/n
+
+	* If line then, wait in the line until you are in the front of the line.
+
+* While front of the line?
+
+	* Locate cafe order taker. Are they ready to take your order?
+
+	* Tell the person what you want to drink.
+
+	* Pay for drink
+
+	* Tip 
+
+* Move to area to receive the drink
+
+* When barista has finished making your drink she will deliver the drink to the counter.
+
+* Locate that drink
+
+* Pick up drink
+
+
+
+
+
+
+
