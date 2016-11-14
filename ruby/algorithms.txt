@@ -1,1 +1,38 @@
 Pseudocode Part 1 Robot using an elevator. Denise Duffy 11/14/16
+
+* Robot you move on your own?
+
+			* No - End program, this is just not going to work.
+			* Yes - Continue
+
+* Do you know what and where an elevator is?
+			* No - End program, this is just not going to work.
+			* Yes - Continue
+
+* Walk or roll in front of the elevator.
+
+* Locate the Up or Down Arrow Buttons.
+
+	* Ask your buddy where you are going, up or down?
+
+	* Listen to their response.
+				
+	* Use your body, arms, hand, and finger to move towards and press this button. 
+
+* When the doors to the elevator open, roll or walk in, whatever you do.
+
+	* Ask your buddy "what floor are we going to?"
+
+	* Listen to their response.
+
+	* Press the same button as their response.
+
+* When the elevator stops moving, ask this question:
+
+		* Does the elevator floor match the floor requested?
+
+		* If no, wait for the this to be so.
+
+		* If yes, and the door opens, roll or walk out of the elevator.
+
+* Give a high five to your buddy, again, can you even do that? Omg, if you can't that would be more pseudocode. 
