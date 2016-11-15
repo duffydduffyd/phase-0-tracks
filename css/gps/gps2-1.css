@@ -1,3 +1,36 @@
-body {
-	background-color: lightblue;
+header {
+  background-color: lightblue;
+  margin: 10px;
+  border: 2px dotted yellow;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Courier;
 }
+
+.column-1 {
+  background-color: blue;
+  display: inline-block;
+  vertical-align: top;
+  width: 48%;
+  padding: 6px;
+  color: white;
+}
+
+.column-2 {
+  background-color: lightgreen;
+  display: inline-block;
+  vertical-align: text-top;
+  width: 48%;
+  padding: 5px;
+}
+
+footer {
+  background-color: 	#8B0000;
+  border: 2px dotted lightblue;
+  color: yellow;
+}
+
+.addpicture {
+  background-image: url("http://imagecolony.com/wp-content/uploads/2016/08/Background-Image-70E.jpg")
+}
+
