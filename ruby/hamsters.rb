@@ -3,7 +3,6 @@
 # Release 1 & 2: Gather hamsters of unknown origin 
 
 # Sets up variable to overwrite
-age = nil 
 
 puts "What is the hamster's name?"
 hamster_name = gets.chomp
@@ -27,6 +26,11 @@ end
 
 puts "How old is our hamster?"
 age = gets.chomp
+
+# Deal with edge case of no input
+if age == ""
+  age = nil
+end
 
 # Release 3: Print to the Console
 
