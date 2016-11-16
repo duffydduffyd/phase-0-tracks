@@ -1,6 +1,7 @@
 # Release 1 & 2: Gather hamsters of unknown origin 
 
 age = nil # sets up variable to overwrite
+adoptable = nil
 
 puts "What is the hamster's name?"
 hamster_name = gets.chomp
@@ -13,6 +14,13 @@ fur_color = gets.chomp
 
 puts "Is this hamster adoptable? (yes/no)"
 adoptable = gets.chomp
+
+# Add convert string to boolean statement 
+if adoptable == "yes"
+	 adoptable = true
+	elsif adoptable == "no"
+	 adoptable = false
+end
 
 puts "How old is our hamster?"
 age = gets.chomp
