@@ -1,7 +1,9 @@
+# Denise Duffy and Maureen Riley 11/15/16 Peer Pair
+
 # Release 1 & 2: Gather hamsters of unknown origin 
 
-age = nil # sets up variable to overwrite
-adoptable = nil
+# Sets up variable to overwrite
+age = nil 
 
 puts "What is the hamster's name?"
 hamster_name = gets.chomp
@@ -20,6 +22,7 @@ if adoptable == "yes"
 	 adoptable = true
 	elsif adoptable == "no"
 	 adoptable = false
+	else adoptable = nil 
 end
 
 puts "How old is our hamster?"
