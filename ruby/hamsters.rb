@@ -16,27 +16,42 @@ fur_color = gets.chomp
 puts "Is this hamster adoptable? (yes/no)"
 adoptable = gets.chomp
 
-# Add convert string to boolean statement 
-if adoptable == "yes"
-	 adoptable = true
-	elsif adoptable == "no"
-	 adoptable = false
-	else adoptable = nil 
+# First attempt to convert to boolean statement. This does work. It might not be as flexible with user input typos.
+
+# if adoptable == "yes"
+# 	 adoptable = true
+# 	elsif adoptable == "no"
+# 	 adoptable = false
+# 	else adoptable = nil 
+# end
+
+# Second attempt to convert to boolean statement. More flexible with user input but less flexible with output.
+if adoptable[0] == "Y"
+	 	adoptable = true
+	elsif adoptable[0] == "y"
+	 	adoptable = true	 
+	elsif adoptable[0] == "N"
+		adoptable = false
+	elsif adoptable[0] == "n"
+	 	adoptable = false
+	else 
+		adoptable = nil 
 end
 
 puts "How old is our hamster?"
-age = gets.chomp
+age = gets.to_i
 
 # Deal with edge case of no input
 if age == ""
-  age = nil
+  age = "Not Sure"
 end
+
 
 # Release 3: Print to the Console
 
 puts "The hamster's name is #{hamster_name}."
 puts "On a scale of 1-10, the hamster's volume is #{volume}."
 puts "The fur color is #{fur_color}."
-puts "This hamster is adoptable: #{adoptable}."
-puts "The hamster is #{age} years old."
+puts "This hamster is adoptable: #{adoptable}"
+puts "The hamster is this age: #{age}"
 
