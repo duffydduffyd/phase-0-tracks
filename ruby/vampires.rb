@@ -72,21 +72,36 @@ current_allergies = nil
 				puts "Results Inconclusive."    
 		end
 
+	# # This area is attempting to use an until loop about alergies.
 
-		# This area is attempting to use a while loop about alergies.
-		puts "What are your current allergies? Type 'done' when you have listed them all." 
-		current_allergies = gets.chomp
-		if current_allergies == "sunshine"
-				puts "Wow, you actually are a vampire."		
-			elsif 
-				current_allergies == "done"
-				puts "Thank you for this information."
-			else	
-				current_allergies = gets.chomp
-		end
-		
+	# 		until	current_allergies == "sunshine" || "done"
+	# 				puts "What are your current allergies? Type done when you have listed them all."
+	# 				current_allergies = gets.chomp 		
+	# 		end	
+
+	# 		if current_allergies == "sunshine"
+	# 				puts "Wow, you actually are a vampire."		
+	# 			else current_allergies == "done"
+	# 				puts "Thank you for this information."
+	# 		end	
+
+
+		# This area is attempt #2 to use an until loop about alergies.
+			
+
+		loop do
+			if current_allergies == "sunshine" 
+				puts "Wow, you actually are a vampire."	
+			elsif current_allergies == "done"	
+				puts "Thank you for this information"
+			else
+				puts "What are your current allergies? Type done when you have listed them all."
+				current_allergies = gets.chomp  	
+		end	
+
 		number_of_employees -= 1 
+		
 	end
-
-puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
-
+	
+	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
+	end
