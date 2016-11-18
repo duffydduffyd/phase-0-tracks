@@ -1,3 +1,5 @@
+# Denise Duffy and Angela Marshall 11/18/16
+
 def encrypt (string)
  string_length = string.length
  index = 0
