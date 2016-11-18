@@ -19,3 +19,14 @@ end
 # encrypt("abc") --> "bcd"
 # encrypt ("zed") --> "afe"
 # encrypt("abcdefghijklmnopqrstuvwxyz") --> bcdefghijklmnopqrstuvwxyza
+
+def decrypt(secret_string)
+decrypt_length = secret_string.length
+counter = 0
+decrypt_string = ""
+
+	while counter < string_length
+		decrypt_string += secret_string[counter-1]
+	end
+	counter = counter - 1
+end
