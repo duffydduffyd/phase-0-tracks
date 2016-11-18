@@ -1,10 +1,21 @@
 def encrypt (string)
+ string_length = string.length
  counter = 0
-  while counter < string.length
-     new_string = string[counter].next
-     puts new_string
+ new_string = ""
+
+  while counter < string_length
+  	if string[counter] == "z"
+  		new_string += "a"
+  	elsif string[counter] == " "
+  		new_string += " "
+  	else			
+  		new_string += string[counter].next
+  	end  
      counter += 1
-  end
+  end   
+  	puts new_string
 end
 
-encrypt("abc")
+# encrypt("abc") --> "bcd"
+# encrypt ("zed") --> "afe"
+# encrypt("abcdefghijklmnopqrstuvwxyz") --> bcdefghijklmnopqrstuvwxyza
