@@ -86,6 +86,7 @@ current_allergies = nil
 	# 		end	
 
 
+
 		# This area is attempt #2 to use an until loop about alergies.
 			
 
