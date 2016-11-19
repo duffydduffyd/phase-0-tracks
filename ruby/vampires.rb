@@ -1,9 +1,4 @@
-# Vampire 4.4 by Denise Duffy 11/16/16
-
-# Define some varibles
-garlic_bread = nil
-health_insurance = nil
-current_allergies = nil
+# Vampire 4.4 by Denise Duffy 11/18/16
 
 # This is a loop that asks how many will be processed
 	puts "How many employees will you process in this batch?"
@@ -64,7 +59,7 @@ current_allergies = nil
 		# This area shows if there is a vampire conclusion based on age, name, garlic break affinity, and need for healthcare
 		if (current_age <= 125 && year_born >= 1891) && (garlic_bread == true || health_insurance == true)
 				puts "You are not a vampire."
-			elsif employee_name == ("Drake Cula" || "Tu Fang")
+			elsif employee_name == "Drake Cula" || employee_name == "Tu Fang"
 				puts "omg, your name gives it away. You are a Vampire!"
 			elsif (current_age >= 125 || year_born <= 1891) && (health_insurance == false) && (garlic_bread == false)
 				puts "You are certainly a vampire."
@@ -72,37 +67,24 @@ current_allergies = nil
 				puts "Results Inconclusive."    
 		end
 
-	# # This area is attempting to use an until loop about alergies.
+	number_of_employees -= 1 
 
-	# 		until	current_allergies == "sunshine" || "done"
-	# 				puts "What are your current allergies? Type done when you have listed them all."
-	# 				current_allergies = gets.chomp 		
-	# 		end	
+	# This area is attempting to use an until loop about alergies.
+			current_allergies = nil
 
-	# 		if current_allergies == "sunshine"
-	# 				puts "Wow, you actually are a vampire."		
-	# 			else current_allergies == "done"
-	# 				puts "Thank you for this information."
-	# 		end	
+			until	current_allergies == "done" || current_allergies == "sunshine"
+					puts "What are your current allergies? Type done when you have listed them all."
+					current_allergies = gets.chomp
+			end	
 
-
-
-		# This area is attempt #2 to use an until loop about alergies.
-			
-
-		loop do
-			if current_allergies == "sunshine" 
-				puts "Wow, you actually are a vampire."	
-			elsif current_allergies == "done"	
-				puts "Thank you for this information"
-			else
-				puts "What are your current allergies? Type done when you have listed them all."
-				current_allergies = gets.chomp  	
-		end	
-
-		number_of_employees -= 1 
-		
+			if current_allergies == "sunshine"
+					puts "Wow, you actually are a vampire."		
+					next
+				elsif current_allergies == "done"
+				  puts "Thank you for this information."
+					next
+			end	
 	end
 	
 	puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
-	end
+
