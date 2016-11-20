@@ -27,22 +27,27 @@
 "the usual".insert(9, " suspects")
 "the usual" + "suspects"
 
+
 # " suspects".<???>
 # => "the usual suspects"
 " suspects".prepend("the usual")
 "the usual" + " suspects"
+" suspects".insert(0,"the usual") 
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"
 "The case of the disappearing last letter".delete "r"
-"The mystery of the missing first letter".chop
+"The case of the disappearing last letter"[0..38]
+"The case of the disappearing last letter".tr("r","")
+
 
 # "The mystery of the missing first letter".<???>
-# => "he mystery of the missing first letter"
+# => "he mystery of the missing first letter""
 "The mystery of the missing first letter".slice("he mystery of the missing first letter")
 "The mystery of the missing first letter".delete("T")
 "The mystery of the missing first letter"[1..38]
-
+"The mystery of the missing first letter".chop
+"The mystery of the missing first letter".tr("T","")
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
@@ -56,11 +61,6 @@
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4
 "How many times does the letter 'a' appear in this string?".count "a"
-
-
-
-
-
 
 
 
