@@ -11,10 +11,12 @@
 # "zom".<???>
 # => “zoom”
 "zom".insert(1,"o")
+"zom".chars.to_a.insert(2,"o").join
 
 # "enhance".<???>
 # => "    enhance    "
 "enhance".center(16)
+"enhance".prepend("   ")<<"   "
 
 # "Stop! You’re under arrest!".<???>
 # => "STOP! YOU’RE UNDER ARREST!"
@@ -23,10 +25,12 @@
 # "the usual".<???>
 #=> "the usual suspects"
 "the usual".insert(9, " suspects")
+"the usual" + "suspects"
 
 # " suspects".<???>
 # => "the usual suspects"
 " suspects".prepend("the usual")
+"the usual" + " suspects"
 
 # "The case of the disappearing last letter".<???>
 # => "The case of the disappearing last lette"
@@ -36,6 +40,9 @@
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
 "The mystery of the missing first letter".slice("he mystery of the missing first letter")
+"The mystery of the missing first letter".delete("T")
+"The mystery of the missing first letter"[1..38]
+
 
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
