@@ -39,6 +39,7 @@
 "The case of the disappearing last letter".delete "r"
 "The case of the disappearing last letter"[0..38]
 "The case of the disappearing last letter".tr("r","")
+"The case of the disappearing last letter".chop
 
 
 # "The mystery of the missing first letter".<???>
@@ -46,7 +47,6 @@
 "The mystery of the missing first letter".slice("he mystery of the missing first letter")
 "The mystery of the missing first letter".delete("T")
 "The mystery of the missing first letter"[1..38]
-"The mystery of the missing first letter".chop
 "The mystery of the missing first letter".tr("T","")
 
 # "Elementary,    my   dear        Watson!".<???>
