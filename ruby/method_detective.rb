@@ -37,3 +37,61 @@
 
 # "How many times does the letter 'a' appear in this string?".<???>
 # => 4
+
+
+# Personal Notes from 5.1
+# irb(main):021:0> test = "   yayayaydo"
+# => "   yayayaydo"
+# irb(main):022:0> test.lstrip
+# => "yayayaydo"
+
+# ljust(integer, padstr=' ') → new_str
+# irb(main):023:0> "a".ljust(5)
+# => "a    "
+
+# irb(main):024:0> "a".ljust(200, "Zz")
+# => "aZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZzZ"
+
+# irb(main):025:0> poem.empty?
+# => false
+
+# irb(main):026:0> poem.include? "hand"
+# => true
+
+# irb(main):017:0> print poem
+# My toast has flown from my hand
+# And my toast has gone to the moon.
+# But when I saw it on television
+# Planting our flag on Halley's comet,
+# More still did I want to eat it.=> nil
+
+# irb(main):056:0> poem << "now"
+# => "My honeydew has flown from my hand\nAnd my toast has gone to the moon.\n
+# But when I saw it on television\nPlanting our flag on Halley's comet,\n
+# More still did I want to eat it.now"
+
+# irb(main):061:0> poem
+# => "My honeydew has flown from my hand\nAnd my toast has gone to the moon.\nBut when I saw it on television\nPlanting our flag on Halley's comet,\nMore still did I want to eat it.nownow"
+
+# irb(main):062:0> poem.bytesize
+# => 177
+
+# irb(main):063:0> peom.capitalize
+# NameError: undefined local variable or method `peom' for main:Object
+# Did you mean?  poem
+# 	from (irb):63
+# 	from /Users/deniseduffy/.rbenv/versions/2.3.0/bin/irb:11:in `<main>'
+
+# irb(main):064:0> poem.capitalize
+# => "My honeydew has flown from my hand\nand my toast has gone to the moon.\nbut when i saw it on television\nplanting our flag on halley's comet,\nmore still did i want to eat it.nownow"
+
+# irb(main):065:0> poem
+# => "My honeydew has flown from my hand\nAnd my toast has gone to the moon.\nBut when I saw it on television\nPlanting our flag on Halley's comet,\nMore still did I want to eat it.nownow"
+
+# irb(main):066:0> poem.chomp"nownow"
+# => "My honeydew has flown from my hand\nAnd my toast has gone to the moon.\nBut when I saw it on television\nPlanting our flag on Halley's comet,\nMore still did I want to eat it."
+
+
+
+
+
