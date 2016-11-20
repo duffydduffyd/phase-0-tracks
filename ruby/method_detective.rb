@@ -49,6 +49,7 @@
 "The mystery of the missing first letter"[1..38]
 "The mystery of the missing first letter".tr("T","")
 
+
 # "Elementary,    my   dear        Watson!".<???>
 # => "Elementary, my dear Watson!"
 "Elementary,    my   dear        Watson!".squeeze(" ")
