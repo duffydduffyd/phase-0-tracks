@@ -3,6 +3,7 @@
 
 dish_list = []
 desserts_list = []
+total_meal = []
 
 puts "Welcome to your Thanksgiving Dishes List"
 
@@ -22,12 +23,13 @@ end
 
 meal = dish_list << desserts_list
 total_meal = meal.flatten
+length_meal = total_meal.length
 
 # Which dish number would you like to print out? 
 # gets.chomp = item_number
 # p dish_list[item_number]
 
-puts "Your meal of #{total_meal.to_s} sounds fabulous."  # How do I make this readable? is there a 
+puts "Your meal of #{total_meal[0..length_meal].to_s} sounds fabulous."  # How do I make this readable? is there a 
 # that converts to a string and then adds an "and" where the commas once were?
 
 # p dish_list
@@ -52,6 +54,8 @@ thanksgiving_2017[:chef] = "me"
 
 p thanksgiving_2017
 
+# How do I print out the hash nicely?
+
 # What happens if store a key in a variable, then access the hash using the variable? 
 # Does it work?
 
@@ -60,7 +64,6 @@ p thanksgiving_2017
 # Does it affect the original hash?
 # thanksgiving_2017[:name] + thanksgiving_2017[:address]
 # p thanksgiving_2017
-
 
 # How do I print this in a block?
 # h.each {|key, value| puts "#{key} is #{value}" }

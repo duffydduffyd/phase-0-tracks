@@ -18,7 +18,7 @@
 
 # Ask if they would like to enter another
 
-customer = Hash.new 
+# customer = Hash.new 
 
 puts "What is the customer's name?"
 customer_name = gets.chomp
@@ -32,13 +32,12 @@ fav_styles = gets.chomp
 puts "What is their light preference?"
 light_preference = gets.chomp
 
-customer {
-	:name => customer_name
+customer = {
+	:name => customer_name,
 	:colors => fav_colors,
 	:styles => fav_styles, 
 	:light => light_preference
 }
-
 
 p customer
 
@@ -49,25 +48,32 @@ another_category = gets.chomp
 	case another_category	
 	when "y" 
 		puts "What categories would you like to add?"
-		user_category = gets.chomp
-		new_category = user_category.to_sym
+		user_category = gets.chomp #'food'
+		new_category = user_category.to_sym#:food
 		
 		puts "What are the specifics of this?"
-		specifics = gets.chomp
+		specifics = gets.chomp #'cheese'
 		# Add new key and value to hash
-	
-		customer[:new_category] = specifics
-	
+		# puts "Your specifics are #{specifics}"
+		customer[new_category] = specifics
+		# customer[:food] = 'cheese'
 	when "n"
-		break	
+	#	break	
 	end	
 
-puts "Your customer, #{customer_name}, likes the following things" 
-print customer
+puts "Your customer, #{customer_name}, likes the following things:" 
+
+customer.each do |category, response|
+	p category
+	p response
+	# puts "#{k} ==> #{v}"
+end
 
 # office hours questions
-# is it better to have the customer_name as a key and value pair and call the hash 
-# something generic like customer?
+
+# what is the name of the hash called? 
+ 
+# is it better to have the customer_name or customer as a key and value pair? 
 
 # I would like the keys to be arrays, but i can't even get strings to work
 
