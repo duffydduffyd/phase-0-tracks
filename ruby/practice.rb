@@ -21,13 +21,15 @@ loop do
 end
 
 meal = dish_list << desserts_list
-total_meal = meal.flatten.
+total_meal = meal.flatten
 
 # Which dish number would you like to print out? 
 # gets.chomp = item_number
 # p dish_list[item_number]
 
-puts "Your meal of #{total_meal} sounds fab."  # How do I make this readable? 
+puts "Your meal of #{total_meal.to_s} sounds fabulous."  # How do I make this readable? is there a 
+# that converts to a string and then adds an "and" where the commas once were?
+
 # p dish_list
 # p dish_list.length
 # p dish_list[2]
@@ -60,6 +62,9 @@ p thanksgiving_2017
 # p thanksgiving_2017
 
 
+# How do I print this in a block?
+# h.each {|key, value| puts "#{key} is #{value}" }
+# thanksgiving_2017.each_value {|value| puts value }
 
 
 
