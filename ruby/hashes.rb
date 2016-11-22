@@ -1,4 +1,4 @@
-# 4.2 Hashes Denise Duffy 11/21/17
+# 5.2 Hashes Denise Duffy 11/21/17
 
 # Enter a customer information
 puts "What is the customer's name?"
