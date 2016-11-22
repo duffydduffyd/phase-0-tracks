@@ -1,13 +1,12 @@
 farm_animals = ['horse', 'pig', 'chicken', 'cow', 'dog']
 
-# puts "The animas in my farm are:"
+puts "The animas in my farm are:"
 
-# farm_animals.each do |animal|
-# 	puts 'HELLO'
-# 	# if animal.length > 4
-# 	# 	puts animal
-# 	# end	
-# end
+farm_animals.each do |animal|
+	# if animal.length > 4
+	 	puts animal
+	# end	
+end
 
 
 # # if farm_animals.length > 3
