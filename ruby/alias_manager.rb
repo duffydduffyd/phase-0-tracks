@@ -20,10 +20,8 @@ p letters
 
 # Change all letters to the next letter
 next_letter = letters.map! { |letter| letter.next } # => 
-p next_letter # => "u", "i", "f", "s", "f", "!", "i", "j"]
+p next_letter # => current output is ["u", "i", "f", "s", "f", "!", "i", "j"]
 
-
-# can use .next.next for 
 
 # Convert vowels to next vowel
 
@@ -64,9 +62,10 @@ next_letter.each do |string|
 		
 end
 
-puts string 
+puts next_letter
 
-# # backup loop logic before .next is run
+
+#  Loop logic before .next is run. this might be better than the one above.
 #  next_letter.each do |string|
 	
 # # case next_letter
@@ -103,8 +102,34 @@ puts string
 
 
 
+# This is how it should be
+
+# use .downcase .split .rotate .join
+def swop_name
+end
+
+def replace_vowels
+end	
+
+def next_letter
+end	
+
+# use  
+def rejoin_name 
+end
 
 
+# User Interface
+
+puts "Enter your first and last name or type q to quit out of this:"
+real_name = gets.chomp
+
+if real_name = q
+	break
+
+	else puts "Your current name is #{real_name} an your fake name is #{fake_name}." 	
+
+end	
 
 
 
