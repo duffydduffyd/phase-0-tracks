@@ -79,7 +79,7 @@ another_category = gets.chomp
 		# Add new key and value to hash
 		# puts "Your specifics are #{specifics}"
 		customer[new_category] = specifics
-		# customer[:food] = 'cheese'
+		# customer[:flooring] = 'wood'
 	when "n"
 	#	break	
 	end	
