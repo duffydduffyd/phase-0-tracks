@@ -67,12 +67,12 @@ places = {
 
 # Arrays
 # 1
-# list_of_integers.delete_if { |num| num <= 10 }
+# 
 # puts list_of_integers
 
 # 2
-# new_array = list_of_integers.select {|num| num < 3}
-# puts new_array
+new_array = list_of_integers.select {|num| num < 3}
+puts new_array => [0]
 
 # 3
 # list_of_integers.reject! {|num| num % 2 == 0}

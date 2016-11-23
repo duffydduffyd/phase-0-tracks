@@ -2,48 +2,112 @@
 # by Denise Duffy 11/22/16
 
 
-real_name = "Denise Duffy"
+# real_name = "Abcdefghijk Lmnopqrstuvwxyz" 
+# real_name = "Denise Duffy"
+real_name = "Hi There"  
+
+
+p real_name
+
 # Downcase the name
 # Swap first and last name.
+flipped_name = real_name.split.rotate.join(" ").downcase 
+p flipped_name # => "there hi"  
 
-flipped_name = real_name.split.rotate.join(" ").downcase # => "duffy denise"
-p flipped_name
+# Figure out how to get this into an array of characters: => 
+letters = flipped_name.chars # => ["t", "h", "e", "r", "e", " ", "h", "i"]
+p letters
 
-# Figure out how to get this into an array of characters: => ["d","u","f","f","y"," ","d","e","n","i","s","e"]
-# No clear built in method to do this. Have tried converting it back to a string and .chars or .split it.
-
-# Iterate with .map! and call a .next block method on the flipped name array
-
-
-
-# Figure out how to convert 5 vowels
+# Change all letters to the next letter
+next_letter = letters.map! { |letter| letter.next } # => 
+p next_letter # => "u", "i", "f", "s", "f", "!", "i", "j"]
 
 
+# can use .next.next for 
 
+# Convert vowels to next vowel
 
+next_letter.each do |string|
+	
+	# edge cases
+	if string == "!"
+	" "	
+	if string == "aa"
+	"a".next	
 
- # Change all letters to the next letter
-def next_letter 
- 	puts "hello"
+	# vowel cases
+	elsif string=="b"
+	"e"
+	elsif string=="f"
+	"i"
+	elsif string=="j"
+	"o"
+	elsif string=="p"
+	"u"
+	elsif string=="v" 
+	"a"
+
+	# consonants need to skip over the vowel and go the next letter
+	elsif string=="a"
+	"b"
+	elsif string=="e"
+	"f"
+	elsif string=="i"
+	"j"
+	elsif string=="o"
+	"n"
+	elsif string=="u"
+	"t"
+	else
+	 
+	end
+		
 end
 
-next_letter
+puts string 
 
-# example a.each {|x| print x, " -- " }
+# # backup loop logic before .next is run
+#  next_letter.each do |string|
+	
+# # case next_letter
+# 	if string == " "
+# 	" "	
+# 	elsif string=="a"
+# 	"e"
+# 	elsif string=="e"
+# 	"i"
+# 	elsif string=="i"
+# 	"o"
+# 	elsif string=="o"
+# 	"u"
+# 	elsif string=="u" 
+# 	"a"
+# 	elsif string=="z"
+# 	"b"
+# 	elsif string=="d"
+# 	"d".next.next 
+# 	elsif string =="h"
+# 	"h".next.next 
+# 	elsif string =="n"
+# 	"n".next.next
+# 	elsif string=="t"
+# 	"t".next.next 
+# 	else 
+# 		string.next 
+# 	end 	
 
 
-# real_name.each {|letter| letter.next }
-
-# real_name.map do |encrypt|
-# 	 	puts real_name.next
+# 	end	
+	
 # end
 
 
 
-# Change all the vowels to the next vowel
-# An array of vowels, compare one array to another
 
 
-# Upcase name
 
-# If ! then add a space kind of thing
+
+
+
+
+
