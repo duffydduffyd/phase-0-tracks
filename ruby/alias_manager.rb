@@ -20,11 +20,11 @@ p flipped_name
 
 
  # Change all letters to the next letter
-def next_letter (x)
+def next_letter 
  	puts "hello"
 end
 
-next_letter(a)
+next_letter
 
 # example a.each {|x| print x, " -- " }
 
