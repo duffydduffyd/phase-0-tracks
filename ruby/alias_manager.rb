@@ -2,7 +2,10 @@
 # by Denise Duffy 11/22/16
 
 
-# real_name = "Abcdefghijk Lmnopqrstuvwxyz" 
+array_alphabet = "abcdefghijklmnopqrstuvwxyz" 
+array_vowels = ["a","e","i","o","u"]
+('a'..'z').to_a-%w(a e i o u)
+
 # real_name = "Denise Duffy"
 real_name = "Hi There"  
 
@@ -27,38 +30,38 @@ p next_letter # => current output is ["u", "i", "f", "s", "f", "!", "i", "j"]
 
 next_letter.each do |string|
 	
-	# edge cases
-	if string == "!"
-	" "	
-	if string == "aa"
-	"a".next	
+	# # edge cases
+	# if string == "!"
+	# " "	
+	# if string == "aa"
+	# "a".next	
 
-	# vowel cases
-	elsif string=="b"
-	"e"
-	elsif string=="f"
-	"i"
-	elsif string=="j"
-	"o"
-	elsif string=="p"
-	"u"
-	elsif string=="v" 
-	"a"
+	# # vowel cases
+	# elsif string=="b"
+	# "e"
+	# elsif string=="f"
+	# "i"
+	# elsif string=="j"
+	# "o"
+	# elsif string=="p"
+	# "u"
+	# elsif string=="v" 
+	# "a"
 
-	# consonants need to skip over the vowel and go the next letter
-	elsif string=="a"
-	"b"
-	elsif string=="e"
-	"f"
-	elsif string=="i"
-	"j"
-	elsif string=="o"
-	"n"
-	elsif string=="u"
-	"t"
-	else
+	# # consonants need to skip over the vowel and go the next letter
+	# elsif string=="a"
+	# "b"
+	# elsif string=="e"
+	# "f"
+	# elsif string=="i"
+	# "j"
+	# elsif string=="o"
+	# "n"
+	# elsif string=="u"
+	# "t"
+	# else
 	 
-	end
+	# end
 		
 end
 
@@ -108,10 +111,12 @@ puts next_letter
 def swop_name
 end
 
-def replace_vowels
+def vowels_shift
+
+
 end	
 
-def next_letter
+def consanant_shift
 end	
 
 # use  
