@@ -1,30 +1,83 @@
 # 5.5 Solo Challenge: Manipulating Strings with Iteration 
 # by Denise Duffy 11/22/16
 
-
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 vowels = "aeiou"
-user_string = "denise duffy"
+user_string = "greg hasenauer"
 
 alphabet_array = alphabet.chars
-vowels_array = vowels.chars
+vowel_array = vowels.chars
 user_array = user_string.chars
-
+no_vowel_alphabet = alphabet_array - vowels_array
+shiftedvowl_array = []
 
 
 p alphabet_array
-p vowels_array
+p vowel_array
+p user_array
+p no_vowel_alphabet
 
-def vowel_shift
 
- 	user_array.each do |letter|
-    if letter == "e"
-		 	puts animal
-	 end	
+def vowel_shift(array)
+	# method for replacing every vowel in a word to the next vowel in the alphabet 
+	# ["g", "r", "e", "g", " ", "h", "a", "s", "e", "n", "a", "u", "e", "r"] => ["g","r","i","g"," ","h","e","s","i","n","e","a","i","r"]
+	
+	index = 0
+	while index <= vowel_array.length
+
+			# compare each string memeber of user_array with each string member of vowel array by  
+			# iterating through the index positioning of the vowel array. 
+			user_array.each do |letter|
+				
+				# if letter is equal to vowel_array[x] shift it to next vowel in array
+				if letter == "u"
+					"a"
+
+				elsif letter == vowel_array[index]
+					shiftedvowl_array << vowel[index].next
+				
+				else	
+					# if the letter does not match vowel array put the letter into shiftedvowl_array 
+					# as it is to rebuild new array
+					shiftedvowl_array << letter
+				end 
+			end	
+	index += 1	
+	end			
+end
+
+
+def consonant_shift(array)
+# keep vowels and shift every consonant to the next letter in the alphabet
+
+	while counter <= user_array.length 
+	# iterate through	
+
+
+
+	counter += 1
+		
 end
 
 
 
+
+
+vowel_shift(user_array)
+
+
+
+
+
+
+
+ 
+
+ 	# 
+ 	#   if letter == "e"
+		#   	puts "yes"
+		#  end 
+ 	#  end	
 
 
 
