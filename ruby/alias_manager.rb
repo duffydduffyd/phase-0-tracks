@@ -77,7 +77,6 @@ end
 rejoin_name
 
 
-
 # def vowel_shift(array)
 # 	# method for replacing every vowel in an array with the next vowel in the alphabet 
 # 	# ["g", "r", "e", "g", " ", "h", "a", "s", "e", "n", "a", "u", "e", "r"] => ["g","r","i","g"," ","h","e","s","i","n","e","a","i","r"]
