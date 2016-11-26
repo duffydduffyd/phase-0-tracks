@@ -3,14 +3,14 @@
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
 vowels = "aeiou"
-user_string = "greg hasenauer"
+user_string = "denise duffy"
 
-alphabet_array = alphabet.chars
-vowel_array = vowels.chars
-user_array = user_string.chars
-no_vowel_alphabet = alphabet_array - vowels_array
+alphabet_string_array = alphabet.split # => ["abcdefghijklmnopqrstuvwxyz"]
+alphabet_array = alphabet.chars # => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"] 
+user_array = user_string.chars # => ["d", "e", "n", "i", "s", "e", " ", "d", "u", "f", "f", "y"]
+no_vowel_alphabet = alphabet_array - vowel_array # => ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
 shiftedvowl_array = []
-
 
 p alphabet_array
 p vowel_array
@@ -18,74 +18,114 @@ p user_array
 p no_vowel_alphabet
 
 
-def vowel_shift(array)
-	# method for replacing every vowel in a word to the next vowel in the alphabet 
-	# ["g", "r", "e", "g", " ", "h", "a", "s", "e", "n", "a", "u", "e", "r"] => ["g","r","i","g"," ","h","e","s","i","n","e","a","i","r"]
-	
-	index = 0
-	while index <= vowel_array.length
-
-			# compare each string memeber of user_array with each string member of vowel array by  
-			# iterating through the index positioning of the vowel array. 
+def vowel_shift
+	vowels = "aeiou"
+	user_string = "denise duffy"
+	user_array = user_string.chars # => ["d", "e", "n", "i", "s", "e", " ", "d", "u", "f", "f", "y"]
+	vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"]
+	x = 0
+	while x <= user_array.length
 			user_array.each do |letter|
-				
-				# if letter is equal to vowel_array[x] shift it to next vowel in array
-				if letter == "u"
-					"a"
+				if letter == vowel_array[x]
+					print letter # => eeiu
+					# p new_letter
+				else
+					# print "  nope  "
+				end	
+			end		
+	x += 1
+	end
+end	
 
-				elsif letter == vowel_array[index]
-					shiftedvowl_array << vowel[index].next
-				
-				else	
-					# if the letter does not match vowel array put the letter into shiftedvowl_array 
-					# as it is to rebuild new array
-					shiftedvowl_array << letter
-				end 
+vowel_shift
+
+def consonant_shift
+	alphabet = "abcdefghijklmnopqrstuvwxyz"
+	vowels = "aeiou"
+	alphabet_array = alphabet.chars # => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]	
+	vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"]
+	user_string = "denise duffy"
+	user_array = user_string.chars
+	no_vowel_alphabet = alphabet_array - vowel_array
+	user_string = "denise duffy"
+	user_array = user_string.chars
+	
+
+	x = 0
+		while x <= no_vowel_alphabet.length	
+			user_array.each do |letter|	
+				# puts no_vowel_alphabet[x]
+				if letter = no_vowel_alphabet[x]
+					next_letter = letter.next
+					puts next_letter
+				end	
 			end	
-	index += 1	
-	end			
+		x = x + 1	
+		end
 end
+consonant_shift
+
+def switch_name
+	real_name = "Denise Duffy"
+	flipped_name = real_name.split.rotate.join(" ").downcase
+	print flipped_name # => duffy denise
+end	
+switch_name
+
+def rejoin_name
+end
+rejoin_name
 
 
-def consonant_shift(array)
-# keep vowels and shift every consonant to the next letter in the alphabet
 
-	while counter <= user_array.length 
-	# iterate through	
+# def vowel_shift(array)
+# 	# method for replacing every vowel in an array with the next vowel in the alphabet 
+# 	# ["g", "r", "e", "g", " ", "h", "a", "s", "e", "n", "a", "u", "e", "r"] => ["g","r","i","g"," ","h","e","s","i","n","e","a","i","r"]
+	
+# 	index = 0
+
+# 	while index <= vowel_array.length 
+
+# 			# compare each string memeber of user_array with each string member of vowel array by  
+# 			# iterating through the index positioning of the vowel array. 
+# 			user_array.each do |letter|
+				
+# 				# if letter is equal to vowel_array[x] shift it to next vowel in array
+# 				if letter == "u"
+# 					"a"
+
+# 				elsif letter == vowel_array[index]
+# 					shiftedvowl_array << vowel[index].next
+				
+# 				else	
+# 					# if the letter does not match vowel array put the letter into shiftedvowl_array 
+# 					# as it is to rebuild new array
+# 					shiftedvowl_array << letter
+# 				end 
+# 			end	
+# 	index += 1	
+# 	end			
+# end
 
 
 
-	counter += 1
+# def consonant_shift(array)
+# # keep vowels and shift every consonant to the next letter in the alphabet
+
+# 	while counter <= user_array.length 
+# 	# iterate through	
+
+# 			letters.map! { |letter| letter.next }
+
+# 	counter += 1
 		
-end
+# end
 
 
 
 
 
-vowel_shift(user_array)
-
-
-
-
-
-
-
- 
-
- 	# 
- 	#   if letter == "e"
-		#   	puts "yes"
-		#  end 
- 	#  end	
-
-
-
-
-
-
-
-
+# vowel_shift(user_array)
 
 
 # array_alphabet = "abcdefghijklmnopqrstuvwxyz" 
