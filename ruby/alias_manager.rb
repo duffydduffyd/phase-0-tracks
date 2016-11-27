@@ -1,20 +1,33 @@
-# 5.5 Solo Challenge: Manipulating Strings with Iteration 
-# by Denise Duffy 11/22/16
-# I wanted to iterate with arrays on this exercise. However, the one I could get to work 
-# is with strings.
-# Left all my array solution work below so that I can come back to it
+=begin README
+5.5 Solo Challenge: Manipulating Strings with Iteration, Denise Duffy 11/22/16
+I wanted to iterate with arrays on this exercise. However, the one I could only get this to work 
+ with strings.
+Left all my array solution work below so that I can come back to it
+=end
+
+
+
+mockdatabase = []
+
+puts "What is your name?"
+gets.chomp = user_string
+
+
+# Denise Duffy => "Faggz Fipoti" => myMockDatabase[0]
+# mockdatabase.push(current_name)
+# Exit UI Console =>  return myMockDatabase => All my names
 
 def switch_name(string)
 	# This method switches and downcases the first and last name.
 	flipped_name = string.split.rotate.join(" ").downcase
 	# p flipped_name # => duffy denise
 end	
-puts switch_name("Denise Duffy")
+switch_name(string)
 
 
 def letter_shift(string)
-	# This is my primitive solution for the letter shift. Vowels and consonants are both shifted via 
-	# iterating through the index of the string.
+	# This is my primitive solution for the letter shift. Vowels and consonants 
+	# are both shifted via iteration through the index of the string.
 	string_length = string.length
 	index = 0
 	new_string = ""
@@ -45,11 +58,12 @@ def letter_shift(string)
 				new_string += string[index].next 
 			end 	
 		index += 1
-		end	
+		end
+		return new_string
 		# puts new_string # => baggz fipoti which is correct
 end	
 
-p letter_shift("zuffy denise") # => nil
+# p letter_shift("duffy denise") # => nil
 
 
 def capitalize(string)
@@ -57,7 +71,33 @@ def capitalize(string)
 	puts string.split.map {|letter| letter.capitalize}.join(' ')
 end
 
-capitalize("baggz fipoti")
+# capitalize("Baggz Fipoti")
+
+
+def all_together(name)
+
+	# loop do
+		switched = switch_name(name)
+		new_name = letter_shift(switched)
+		capital_new_name = capitalize(new_name)
+		#mockdatabase.push(capital_new_name)
+		#else 
+			#break if name == "q" 
+		#end 
+		 # return mockdatabase
+		#end 
+	# return capital_new_name
+end
+
+puts all_together("Denise Duffy")
+
+
+
+
+
+
+
+
 
 
 
