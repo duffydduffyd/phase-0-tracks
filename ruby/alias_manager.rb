@@ -1,81 +1,151 @@
 # 5.5 Solo Challenge: Manipulating Strings with Iteration 
 # by Denise Duffy 11/22/16
+# I wanted to iterate with arrays on this exercise. However, the one I could get to work 
+# is with strings.
+# Left all my array solution work below so that I can come back to it
 
-alphabet = "abcdefghijklmnopqrstuvwxyz"
-vowels = "aeiou"
-user_string = "denise duffy"
-
-alphabet_string_array = alphabet.split # => ["abcdefghijklmnopqrstuvwxyz"]
-alphabet_array = alphabet.chars # => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"] 
-user_array = user_string.chars # => ["d", "e", "n", "i", "s", "e", " ", "d", "u", "f", "f", "y"]
-no_vowel_alphabet = alphabet_array - vowel_array # => ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-shiftedvowl_array = []
-
-p alphabet_array
-p vowel_array
-p user_array
-p no_vowel_alphabet
+def switch_name(string)
+	# This method switches and downcases the first and last name.
+	flipped_name = string.split.rotate.join(" ").downcase
+	# p flipped_name # => duffy denise
+end	
+puts switch_name("Denise Duffy")
 
 
-def vowel_shift
-	vowels = "aeiou"
-	user_string = "denise duffy"
-	user_array = user_string.chars # => ["d", "e", "n", "i", "s", "e", " ", "d", "u", "f", "f", "y"]
-	vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"]
-	x = 0
-	while x <= user_array.length
-			user_array.each do |letter|
-				if letter == vowel_array[x]
-					print letter # => eeiu
-					# p new_letter
-				else
-					# print "  nope  "
-				end	
-			end		
-	x += 1
-	end
+def letter_shift(string)
+	# This is my primitive solution for the letter shift. Vowels and consonants are both shifted via 
+	# iterating through the index of the string.
+	string_length = string.length
+	index = 0
+	new_string = ""
+		while index < string_length
+			if string[index] == " "
+				new_string += " "
+			elsif string[index] == "a"
+				new_string +=	"e"
+			elsif string[index] == "e"
+				new_string += "i"
+			elsif string[index] == "i"
+				new_string +=	"o"
+			elsif string[index] == "o"
+			  new_str	+= "u"
+			elsif string[index] == "u" 
+				new_string += "a"
+			elsif string[index] == "z"
+				new_string	+= "b"
+			elsif string[index] == "d"
+				new_string += "d".next.next 
+			elsif string[index] == "h"
+				new_string += "h".next.next 
+			elsif string[index] == "n"
+				new_string +=	"n".next.next
+			elsif string[index] == "t"
+				new_string +=	"t".next.next 
+			else 
+				new_string += string[index].next 
+			end 	
+		index += 1
+		end	
+		# puts new_string # => baggz fipoti which is correct
 end	
 
-vowel_shift
+p letter_shift("zuffy denise") # => nil
 
-def consonant_shift
-	alphabet = "abcdefghijklmnopqrstuvwxyz"
-	vowels = "aeiou"
-	alphabet_array = alphabet.chars # => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]	
-	vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"]
-	user_string = "denise duffy"
-	user_array = user_string.chars
-	no_vowel_alphabet = alphabet_array - vowel_array
-	user_string = "denise duffy"
-	user_array = user_string.chars
-	
 
-	x = 0
-		while x <= no_vowel_alphabet.length	
-			user_array.each do |letter|	
-				# puts no_vowel_alphabet[x]
-				if letter = no_vowel_alphabet[x]
-					next_letter = letter.next
-					puts next_letter
-				end	
-			end	
-		x = x + 1	
-		end
+def capitalize(string)
+	# This method takes a string, splits it creating an array, capitalizes, and joins it back again
+	puts string.split.map {|letter| letter.capitalize}.join(' ')
 end
-consonant_shift
 
-def switch_name
-	real_name = "Denise Duffy"
-	flipped_name = real_name.split.rotate.join(" ").downcase
-	print flipped_name # => duffy denise
-end	
-switch_name
+capitalize("baggz fipoti")
 
-def rejoin_name
-end
-rejoin_name
 
+
+
+
+# --------------------------------------------------------------------------
+# This is my scratch work in attempting this with arrays
+
+# alphabet = "abcdefghijklmnopqrstuvwxyz"
+# vowels = "aeiou"
+# user_string = "denise duffy"
+
+# alphabet_string_array = alphabet.split # => ["abcdefghijklmnopqrstuvwxyz"]
+# alphabet_array = alphabet.chars # => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+# vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"] 
+# user_array = user_string.chars # => ["d", "e", "n", "i", "s", "e", " ", "d", "u", "f", "f", "y"]
+# no_vowel_alphabet = alphabet_array - vowel_array # => ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
+# shiftedvowl_array = []
+
+# p alphabet_array
+# p vowel_array
+# p user_array
+# p no_vowel_alphabet
+# def vowel_shift
+# 	# this method shifts a vowel to the next vowel in the array
+# 	vowels = "aeiou"
+# 	user_string = "denise duffy"
+# 	user_array = user_string.chars # => ["d", "e", "n", "i", "s", "e", " ", "d", "u", "f", "f", "y"]
+# 	vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"]
+# 	# x = 0
+# 		# while x <= user_array.length
+# 			user_array.map! do |letter|
+# 					x = 0
+# 					if letter == vowel_array[x]
+# 						print letter # => eeiu
+# 						print vowel_array[x+1] # =>
+# 						print vowel_array.next
+# 					elsif letter == "u"
+# 						print "a" 
+# 						 # puts vowel_array[0]
+# 					else
+# 						print letter  #letter[x]
+# 					end
+# 					x += 1	
+# 			end
+# 		# x += 1		
+# 		# end
+# end	
+
+# vowel_shift
+# def consonant_shift
+# 	# this methods shifts keeps the vowel and shifts the consonants in a name 
+# 	alphabet = "abcdefghijklmnopqrstuvwxyz"
+# 	vowels = "aeiou"
+# 	alphabet_array = alphabet.chars # => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]	
+# 	vowel_array = vowels.chars # => ["a", "e", "i", "o", "u"]
+# 	user_string = "denise duffy"
+# 	user_array = user_string.chars
+# 	no_vowel_alphabet = alphabet_array - vowel_array
+# 	user_string = "denise duffy"
+# 	user_array = user_string.chars
+# 	x = 0
+# 		while x <= no_vowel_alphabet.length	
+# 			user_array.each do |letter|	
+# 				# puts no_vowel_alphabet[x]
+# 				if letter == no_vowel_alphabet[x]
+# 					next_letter = letter.next
+# 					puts next_letter
+# 				end	
+# 		end	
+# 		x = x + 1	
+# 		end
+# end
+
+# consonant_shift
+
+# def rejoin_name
+# 	#this method rejoins the name and capitalizes it
+# 	array = ["d","u","f","f","y"," ","d","e","n","i","s","e"] 
+# 	new_string = array.join.capitalize
+# 	# cap_new_string = new_string
+# end
+
+# p rejoin_name # => "Duffy denise"
+
+
+# puts "Enter your full name. Type done when you want to exit."
+# real_name = gets.chomp 
 
 # def vowel_shift(array)
 # 	# method for replacing every vowel in an array with the next vowel in the alphabet 
@@ -106,8 +176,6 @@ rejoin_name
 # 	end			
 # end
 
-
-
 # def consonant_shift(array)
 # # keep vowels and shift every consonant to the next letter in the alphabet
 
@@ -119,8 +187,6 @@ rejoin_name
 # 	counter += 1
 		
 # end
-
-
 
 
 
@@ -199,29 +265,7 @@ rejoin_name
 # # # case next_letter
 # # 	if string == " "
 # # 	" "	
-# # 	elsif string=="a"
-# # 	"e"
-# # 	elsif string=="e"
-# # 	"i"
-# # 	elsif string=="i"
-# # 	"o"
-# # 	elsif string=="o"
-# # 	"u"
-# # 	elsif string=="u" 
-# # 	"a"
-# # 	elsif string=="z"
-# # 	"b"
-# # 	elsif string=="d"
-# # 	"d".next.next 
-# # 	elsif string =="h"
-# # 	"h".next.next 
-# # 	elsif string =="n"
-# # 	"n".next.next
-# # 	elsif string=="t"
-# # 	"t".next.next 
-# # 	else 
-# # 		string.next 
-# # 	end 	
+	
 
 
 # # 	end	
