@@ -6,16 +6,11 @@ Left all my array solution work below so that I can come back to it
 =end
 
 
-
 mockdatabase = []
 
 puts "What is your name?"
-gets.chomp = user_string
-
-
-# Denise Duffy => "Faggz Fipoti" => myMockDatabase[0]
-# mockdatabase.push(current_name)
-# Exit UI Console =>  return myMockDatabase => All my names
+string = gets.chomp
+# string => "Denise Duffy"
 
 def switch_name(string)
 	# This method switches and downcases the first and last name.
@@ -23,7 +18,6 @@ def switch_name(string)
 	# p flipped_name # => duffy denise
 end	
 switch_name(string)
-
 
 def letter_shift(string)
 	# This is my primitive solution for the letter shift. Vowels and consonants 
@@ -41,7 +35,7 @@ def letter_shift(string)
 			elsif string[index] == "i"
 				new_string +=	"o"
 			elsif string[index] == "o"
-			  new_str	+= "u"
+			  new_string	+= "u"
 			elsif string[index] == "u" 
 				new_string += "a"
 			elsif string[index] == "z"
@@ -60,36 +54,63 @@ def letter_shift(string)
 		index += 1
 		end
 		return new_string
-		# puts new_string # => baggz fipoti which is correct
+		# puts new_string # => "faggz fipoti" which is correct
 end	
 
-# p letter_shift("duffy denise") # => nil
-
-
-def capitalize(string)
+def capitalize(string) # "faggz fipoti" => "Faggz Fipoti"
 	# This method takes a string, splits it creating an array, capitalizes, and joins it back again
-	puts string.split.map {|letter| letter.capitalize}.join(' ')
+	string.split.map {|letter| letter.capitalize}.join(' ')
 end
 
-# capitalize("Baggz Fipoti")
-
-
 def all_together(name)
-
-	# loop do
 		switched = switch_name(name)
 		new_name = letter_shift(switched)
 		capital_new_name = capitalize(new_name)
-		#mockdatabase.push(capital_new_name)
-		#else 
-			#break if name == "q" 
-		#end 
-		 # return mockdatabase
-		#end 
-	# return capital_new_name
 end
 
-puts all_together("Denise Duffy")
+puts "Your name #{string} is actually #{all_together(string)}" # => Your name Denise Duffy is actually Faggz Fipoti
+# Created an array of hashes. Had trouble iterating with hashes so this is the make it work solution.
+mockdatabase << {:name => string, :spy_name => all_together(string)}
+
+loop do
+	puts "Enter another name (or type quit):"
+	string = gets.chomp
+	break if string == "quit"
+	puts "#{string} is actually #{all_together(string)}" 
+	# puts all_together(string)
+	# push more data to the an array of hashes (need to improve project to add to a hash rather than array)	
+	mockdatabase << {:name => string, :spy_name => all_together(string)}
+end
+
+# 
+# print mockdatabase
+mockdatabase.each do |key, value|
+	# puts key, value
+  puts "#{key}  #{value}"   
+end
+
+# output
+# ruby :> ruby alias_manager.rb
+# What is your name?
+# Denise Duffy
+# Your name Denise Duffy is actually Faggz Fipoti
+# Enter another name (or type quit):
+# Wolf Blitzer
+# Wolf Blitzer is actually Cmovbis Xumg
+# Enter another name (or type quit):
+# Ulf Johnson
+# Ulf Johnson is actually Kujptup Amg
+# Enter another name (or type quit):
+# quit
+# {:name=>"Denise Duffy", :spy_name=>"Faggz Fipoti"}
+# {:name=>"Wolf Blitzer", :spy_name=>"Cmovbis Xumg"}
+# {:name=>"Ulf Johnson", :spy_name=>"Kujptup Amg"}
+
+
+
+
+
+
 
 
 
