@@ -95,6 +95,7 @@ les_name = ["Denise", "Melissa", "Jill"]
 bootcamp = ["Dev Boot"]
 location = ["SF", "Chicago", "Austin"]
 fav_person = ["fav_person"]
+
 les_hash = {}
 	x = 0
 50.times do 
@@ -111,26 +112,62 @@ les_hash.each do |key, value|
   puts "#{key} ===> #{value}"   
 end
 
-les_hash.each do 
+les_hash.each do |key|
 	# denise.hoola_hoop(2)
 	# denise.drink(3)
-	"ediewindsorscholar34".hoola_hoop(2)
+	# ediewindsorscholar34".hoola_hoop(2)
 	# bring to office hours. this is not right, i want to iterate through each ediewindsorscholar
+	key.drink
 end
 
 
-=begin
+=begin other notes
+
+
+class Puppy
+  def initialize(name)
+  	@name = name
+  end
+	
+  def bark
+  	puts "#{@name} says: Woof!"
+  end
+end
+
+# we make an array of names to build puppies with
+names = ["Fido", "Spot", "Duchess", "Ginger"]
+
+# we make an empty container for our puppy collection
+puppies = []
+
+puts "Iterating through names list to create puppies ..."
+names.each do |name|
+  puts "Creating a puppy named #{name} ..."
+  puppies << Puppy.new(name)
+  puts "There are now #{puppies.length} Puppy instances in the array"
+  puts "----"
+end
+
+puts "Testing each Puppy instance in the array to make sure it can bark ..."
+puppies.each do |puppy|
+  puppy.bark
+end
+
+
+
+
+
+
+
+
 # test_1 = Array.new
 # test_2 = Array.new
 # test_3 = Array.new
 # test_4 = Array.new
-
 # test_1 << 1 
 # test_2 = [1,2,3,4]
-
 # p test_1
 # p test_2.each { |x| p x }
-
 
 class Puppy
   def initialize(name, toy, food)
