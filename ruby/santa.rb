@@ -20,7 +20,8 @@ class Santa
 		p "That was a good #{cookie}!" 
 	end	
 
-end	
+end
+
 
 # Release 1
 # belly_man = Santa.new
