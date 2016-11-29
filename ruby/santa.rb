@@ -9,7 +9,7 @@ class Santa
 		@gender = gender
 		@ethnicity = ethnicity
 		@age = age
-		@raindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"].sample
+		# @raindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"].sample
 	end	
 
 	def speak
@@ -20,14 +20,32 @@ class Santa
 		p "That was a good #{cookie}!" 
 	end	
 
+	# basic getter method
+	def nameofsanta
+   	 @santa_name = santa_name
+  end	 
+
+  def ageofsanta
+  	@age 
+  end	
+
 end
 
 
 # Release 1
 # belly_man = Santa.new
-# belly_man = Santa.new("female","irish")
-# belly_man.eat_milk_and_cookies("oreo")
-# p belly_man
+belly_man = Santa.new("bob", 80, "male", "irish", 0)
+belly_man.eat_milk_and_cookies("oreo")
+
+
+# These two statements don't work
+# trying to write a getter method
+belly_man.ageofsanta
+# trying to print the age of santa
+belly_man.age
+
+
+
 
 
 # santas = []
@@ -35,15 +53,35 @@ end
 # height = [80, 99, 87, 88]
 # gender = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 # ethnicity = ["irish", "italian", "german", "maori", "native american"]
-# age = [23, 66, 56, 80]
+# age = [0]
 
 # gender.length.times do |i|
-# 	santas << Santa.new(santa_name.sample, height.sample, gender.sample, ethnicity.sample, age.sample)
+# 	santas << Santa.new(santa_name.sample, height.sample, gender.sample, ethnicity.sample, age)
 # end
+
+# p santas
+
+# office hours
+# why doesn't this print that last state the instance variable @santa_name?
+# instance.variable 
+# Santa:0x007f9722968ed.santa_name
+# goal is to assign the name of santa to the last santa name
+# .nameofsanta
+# p @santa_name
+
+# How to I run this and call the ageofsanta method to add?
+
+
+
+
+
+
 # p santas
 
 # Release 2
 
+# p nameofsanta
+# p @santa_name
 
 
 

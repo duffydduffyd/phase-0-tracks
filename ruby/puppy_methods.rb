@@ -45,10 +45,6 @@ coco.drink_water(9)
 p coco
 p coco.fur_length
 p fur = coco.fur_length
-
-
-
-
 =end
 
 
@@ -74,19 +70,30 @@ class Lesbians_Who_Tech
   def drink(num_drinks)
   	x = 0
 	  while x <= 5 
-	   	 p "drank than danced"  
+	   	 p "drink than dance"  
 	  	 x += 1
 	  end 
 	end  
+
+	def new_favorite_person(fav_person) 
+		# @fav_person = "Notorious RGB", this works, but i want to pass it through the instance method
+		puts "After all that drinking, #{@les_name} has an new favorite person and it's #{@fav_person}"
+	end
+
 end
 
-denise = Lesbians_Who_Tech.new("Denise Duffy", "Dev Bootcamp", "SF", "Edie Windsor")
-# Denise = Lesbians_Who_Tech.new
-denise.fav_person = "Notorious RGB"
-denise.hoola_hoop(5)
-denise.drink(3)
-p denise.bootcamp
-p denise.fav_person
+# This creates a new instance of the class with paramenters to initialize @instancevariables
+scholar = Lesbians_Who_Tech.new("Denise Duffy", "Dev Bootcamp", "SF", "Edie Windsor")
+# denise = Lesbians_Who_Tech.new
+scholar.hoola_hoop(5)
+scholar.drink(3)
+p scholar.bootcamp
+# p scholar.fav_person
+
+# offic hours topic, why can't the second line work on it's own to reassign fav_person
+# how do i make this work better? Want to reassign favorite person via new_favorite_person method
+scholar.fav_person = "Notorious RGB"
+scholar.new_favorite_person("Notorious RGB")
 
 
 # Use a loop to make 50 instances of your class.
@@ -112,13 +119,21 @@ les_hash.each do |key, value|
   puts "#{key} ===> #{value}"   
 end
 
+# 0ffice hours. this is not right, i want to iterate through each ediewindsorscholar
 les_hash.each do |key|
-	# denise.hoola_hoop(2)
-	# denise.drink(3)
+	# attempting to iterate through instance methods
+	# scholar.hoola_hoop(2)
+	# scholar.drink(3)
 	# ediewindsorscholar34".hoola_hoop(2)
-	# bring to office hours. this is not right, i want to iterate through each ediewindsorscholar
-	key.drink
+	# key.drink
 end
+
+
+
+
+
+
+
 
 
 =begin other notes
