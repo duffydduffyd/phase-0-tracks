@@ -96,12 +96,12 @@ bootcamp = ["Dev Boot"]
 location = ["SF", "Chicago", "Austin"]
 fav_person = ["fav_person"]
 les_hash = {}
-x = 0
+	x = 0
 50.times do 
-les_hash["ediewindsorscholar#{x}"] = Lesbians_Who_Tech.new(les_name.sample,bootcamp,location.sample,fav_person)
-x += 1
+	les_hash["ediewindsorscholar#{x}"] = Lesbians_Who_Tech.new(les_name.sample,bootcamp,location.sample,fav_person)
+	x += 1
 end 
-# puts les_hash 
+puts les_hash 
 
 puts les_hash["ediewindsorscholar34"].inspect
 #les_hash[key] = value # => Lesbians_Who_Tech.new
@@ -109,6 +109,13 @@ puts les_hash["ediewindsorscholar34"].inspect
 les_hash.each do |key, value|
 	# puts key, value
   puts "#{key} ===> #{value}"   
+end
+
+les_hash.each do 
+	# denise.hoola_hoop(2)
+	# denise.drink(3)
+	"ediewindsorscholar34".hoola_hoop(2)
+	# bring to office hours. this is not right, i want to iterate through each ediewindsorscholar
 end
 
 
