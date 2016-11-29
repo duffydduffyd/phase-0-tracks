@@ -6,10 +6,10 @@ Left all my array solution work below so that I can come back to it
 =end
 
 
-mockdatabase = []
+mockdatabase = {}
 
-puts "What is your name?"
-string = gets.chomp
+# puts "What is your name?"
+# string = gets.chomp
 # string => "Denise Duffy"
 
 def switch_name(string)
@@ -17,7 +17,7 @@ def switch_name(string)
 	flipped_name = string.split.rotate.join(" ").downcase
 	# p flipped_name # => duffy denise
 end	
-switch_name(string)
+# switch_name(string)
 
 def letter_shift(string)
 	# This is my primitive solution for the letter shift. Vowels and consonants 
@@ -55,6 +55,20 @@ def letter_shift(string)
 		end
 		return new_string
 		# puts new_string # => "faggz fipoti" which is correct
+
+=begin office hours solution
+vowel = "aeiou"
+if my_letter = "u"
+	new_letter = "a"		
+else
+	current_position = vowels.index(my_letter)
+	new_position = current_position + 1
+	new_letter = vowels[new_position]
+end		
+=end
+
+
+
 end	
 
 def capitalize(string) # "faggz fipoti" => "Faggz Fipoti"
@@ -68,25 +82,33 @@ def all_together(name)
 		capital_new_name = capitalize(new_name)
 end
 
-puts "Your name #{string} is actually #{all_together(string)}" # => Your name Denise Duffy is actually Faggz Fipoti
+# puts "Your name #{string} is actually #{all_together(string)}" # => Your name Denise Duffy is actually Faggz Fipoti
 # Created an array of hashes. Had trouble iterating with hashes so this is the make it work solution.
-mockdatabase << {:name => string, :spy_name => all_together(string)}
+# mockdatabase << {:name => string, :spy_name => all_together(string)}
+# mockdatabase :name => string, :spy_name => all_together(string)}
+
 
 loop do
-	puts "Enter another name (or type quit):"
+	puts "Enter a name (or type quit):"
 	string = gets.chomp
 	break if string == "quit"
 	puts "#{string} is actually #{all_together(string)}" 
 	# puts all_together(string)
 	# push more data to the an array of hashes (need to improve project to add to a hash rather than array)	
-	mockdatabase << {:name => string, :spy_name => all_together(string)}
+	# mockdatabase["Denise Duffy"] = "faggz fipoti"
+	mockdatabase[string] = all_together(string)
+
 end
+
+# mockdatabase = {
+# 	"Denise Duffy" => "faggz fipoti"
+# }
 
 # 
 # print mockdatabase
 mockdatabase.each do |key, value|
 	# puts key, value
-  puts "#{key}  #{value}"   
+  puts "#{key} ===> #{value}"   
 end
 
 # output

@@ -1,1 +1,0 @@
-# GPS 2.2 by Denise Duffy
