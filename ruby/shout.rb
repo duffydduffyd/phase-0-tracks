@@ -7,7 +7,10 @@ module Shout
   end
 
   def self.yell_happily(words)
-  	words.capitalize + "!" + "woo hoo!"
+  	words.upcase + "!" + " Woo hoo!"
   end	
 
 end
+
+p Shout.yell_angrily("omg")
+p Shout.yell_happily("omg")
