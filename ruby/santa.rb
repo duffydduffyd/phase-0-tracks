@@ -26,7 +26,7 @@ class Santa
   end	 
 
   # Release 2
-  # getter method
+  #getter method for attributes
   def ageofsanta(num)
   	@age = num
   end	
@@ -36,29 +36,26 @@ class Santa
   end	
 
   def get_mad_at(reindeer) 
-  	
-  			p reindeer
+  			# p reindeer
   			# reindeer_ranking.index(reindeer)
-
-  			@reindeer_ranking << reindeer
-  			@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer))  
-  			# p @reindeer_ranking
-
   			
+  			@reindeer_ranking.delete_at(@reindeer_ranking.index(reindeer))
+  			@reindeer_ranking << reindeer  
+  			# p @reindeer_ranking
 				# p @reindeer_ranking	  	
 	end	
 
   # ??? need a setter method here
-  def gender_reassign
-  	@gender = gender_assignment
+  def gender_reassign=(new_gender)
+  	@gender = new_gender
   end 	
 
-  # very basic getter method
+  # getter method for attributes
   def current_age
   	@age
   end	
 
-  # very basic getter method
+  # getter method for attributes
   def ethnicity
   	@ethnicity
   end	
@@ -69,23 +66,31 @@ end
 # Release 1
 reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 belly_man = Santa.new("bob", 80, "male", "irish", 0, reindeer_ranking)
-p belly_man
+# p belly_man
 # belly_man.speak
 # belly_man.eat_milk_and_cookies("oreo")
 # p belly_man.ageofsanta(50)
-p belly_man.get_mad_at("Dancer")
-p belly_man
-
-
-# @gender to be reassigned from outside the class definition.
-
 
 # Release 2
 # age Santa by one year
 p belly_man.celebrate_birthday(40)
 
-# take a reindeer's name as an argument, and move that reindeer in last place in the reindeer rankings
-#p get_mad_at("Vixen")
+#take a reindeer's name as an argument, and move that reindeer in last place in the reindeer rankings. Vixen knows what he did.
+p belly_man.get_mad_at("Dancer")
+p belly_man
+
+# @gender to be reassigned from outside the class definition.
+belly_man.gender_reassign = "lesbian"
+p belly_man
+
+p belly_man.current_age
+p belly_man.ethnicity
+
+
+
+
+
+
 
 
 #santas[i].celebrate_birthday(age)
