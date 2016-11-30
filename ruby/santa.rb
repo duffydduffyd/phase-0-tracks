@@ -152,7 +152,6 @@ end
 #<Santa:0x007fc39c15a3a8 @santa_name="Hairy Hal", @height=87, @gender="bigender", @ethnicity="italian", @age=21, @reindeer_ranking="Cupid">
 
 
-
 # previous used driver code
 # santas = []
 # santas << Santa.new("agender", "black")
