@@ -80,6 +80,23 @@ class Protester
 	 	"#{@protester_name} is marching down #{street} street."
 	 end	
 
+	 def long_march(streets)
+	 	streets.each do |street|
+	 		p march(street)
+	 	end
+	 end
+
+	 def self.biglongmarch(people,streets)
+	 	people.each do |person|
+	 		self.new(person).long_march(streets)
+	 		# streets.each do |street|
+	 		# 	thing = self.new(person)
+	 		# 	# p thing.class
+	 		# 	p thing.march(street)
+	 		# 	self.new(person).march(street)
+ 			# end
+	 	end
+	 end	
 end
 
 protester = Protester.new("Erica")
@@ -89,29 +106,42 @@ p protester.march("Market")
 
 # This is a Class Method call.
 p Protester.banner("End Raciscm")
-"Our banner says End Raciscm"
+# "Our banner says End Raciscm"
 
 # This is a Class Method call but can I also access Shout yell_angrily?
 p protester.yell_angrily(Protester.banner("We are frustrated"))
 # => "My sign says We are frustrated!!! :("
 
+streets = ["Market", "Mission", "Valencia", "Haight"]
+people = ["Larry", "Sally", "Denise", "Ben"]
 
- 
-
-
-
-
-
+protester.long_march(streets)
+Protester.biglongmarch(people,streets) 
 
 
-
-
-
-
-
-
-
-
-
+# output
+# "Erica is marching down Market street."
+# "The banner we all march under says End Raciscm"
+# "The banner we all march under says We are frustrated!!! :("
+# "Erica is marching down Market street."
+# "Erica is marching down Mission street."
+# "Erica is marching down Valencia street."
+# "Erica is marching down Whitney street."
+# "Larry is marching down Market street."
+# "Larry is marching down Mission street."
+# "Larry is marching down Valencia street."
+# "Larry is marching down Whitney street."
+# "Sally is marching down Market street."
+# "Sally is marching down Mission street."
+# "Sally is marching down Valencia street."
+# "Sally is marching down Whitney street."
+# "Denise is marching down Market street."
+# "Denise is marching down Mission street."
+# "Denise is marching down Valencia street."
+# "Denise is marching down Whitney street."
+# "Ben is marching down Market street."
+# "Ben is marching down Mission street."
+# "Ben is marching down Valencia street."
+# "Ben is marching down Whitney street."
 
 
