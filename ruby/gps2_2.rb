@@ -1,1 +1,1 @@
-# GPS 2.2 Create an Electronic Grocery List by Denise Duffy
+# GPS 2.2 Create an Electronic Grocery List by Denise Duffy 11/30/16
