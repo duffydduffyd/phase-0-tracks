@@ -19,7 +19,7 @@ class TodoList
 	end	
 
 	def get_item(index)
-	@to_do_array[index]# something here that retrieves the item by index
+		@to_do_array[index]# something here that retrieves the item by index
 	end
 end	
 
