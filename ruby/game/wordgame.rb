@@ -37,25 +37,53 @@ class Wordgame
 		@underscore_array # ==> ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
 	end	
 
-	def user2_input(guess)
-		@user2_guess = guess.downcase # ==> "s"
+	def user2_input(guess_letter)
+		@user2_guess = guess_letter.downcase # ==> "s"
 	end	
 
-	def map_guess_to_letter(guess)
-		if @user2_guess == @mysteryword_word_array[0]
-			puts "great"
-		else print
-			puts "nope" 	
-		end	
+	def map_guess_to_letter
+		# input: user single letter guess @user2@_guess string 
+		# action: if the user2_guess string is equal to any string in @mystery_word_array then fill in that position in @underscore array that letter 
+		# output: underscore_array with letter filled in
 	end	
+
+	def guess_the_word(user2_word_guess)
+		# input: user2 attempt to guess the word
+		# action: does the user@_word_guess match @mysteryword? 
+		# output: true or false?
+	end	
+
+
 
 end	
 
-new_game = Wordgame.new('thisisMyword')
+# new_game = Wordgame.new('thisisMyword')
 
-p new_game.getter_mystery_word
-p new_game.mysteryword_array_getter
-p new_game.map_letter_to_underscore
-# p new_game.display_underscore
-p new_game.user2_input("T") 
-p new_game.map_guess_to_letter(@user2_guess)
+# p new_game.getter_mystery_word
+# p new_game.mysteryword_array_getter
+# p new_game.map_letter_to_underscore
+# # p new_game.display_underscore
+# p new_game.user2_input("s") 
+# p new_game.map_guess_to_letter(@user2_guess)
+
+
+
+
+
+# def map_guess_to_letter(guess)
+
+	# 	@mysteryword_word_array.map do |guess|
+	# 			index = 0
+	# 			while index <= @user2_guess.length
+	# 				if @user2_guess(index) == letter
+	# 					p letter 
+	# 				end
+	# 					#p @underscore_array[0] = guess
+	# 				else 
+	# 					p "nope" 	
+	# 				end
+	# 			index += 1	
+	# 	end 
+
+	# @number_of_guesses
+		# action: repeat map_guess_to letter until number of guesses word.length is reached
