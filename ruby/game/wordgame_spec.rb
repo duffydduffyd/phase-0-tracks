@@ -12,4 +12,6 @@ describe Wordgame do
     expect(wordgame.getter_mystery_word).to eq "running"
   end
 
+  
+
 end   

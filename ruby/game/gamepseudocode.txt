@@ -28,7 +28,7 @@ output: "_ _ _ _ _ _ _"
 
 # def Reveal_Letter
 input:  User 2 guess of letter 
-step: determine anyplace in the string with that letter - compare string
+step: determines any place in the string with that letter - compare strings, changes _ to the c 
 output: "_ _ _ c _ _ _"
 
 input: 
