@@ -5,6 +5,7 @@
 # 2) We need to map _ for every letter
 # 3) 
 
+
 class Wordgame
 	# attr_reader :mysteryword, :guess
 
@@ -15,6 +16,7 @@ class Wordgame
 		@underscore_array
 		@user2_guess
 	end
+
 
 	def getter_mystery_word
 		@mysteryword # ==> "thisismyword"
