@@ -1,0 +1,48 @@
+directory is game
+http://rubyquiz.com/quiz130.html
+
+create a class Wordgame
+
+create an instance of the class with rspec
+
+def initialize
+@mysteryword
+@attempts
+
+input: String, Enter a mystery word - string
+step: Ask Create variable out of string, downcase it
+output: returns a mystery lowercased word 
+
+input: 
+step:
+output: 
+
+# def Guess_Attempts
+input: Length of word
+step: set number of guesses to length of string
+output: number of guesses
+
+input: Mystery word display
+step:	Figure out length of mystery word string, convert to underscores,  with 1 space imbetween.
+output: "_ _ _ _ _ _ _" 
+
+# def Reveal_Letter
+input:  User 2 guess of letter 
+step: determines any place in the string with that letter - compare strings, changes _ to the c 
+output: "_ _ _ c _ _ _"
+
+input: 
+step:
+output: 
+
+input:
+step:
+output:
+
+input
+step
+output
+
+words.each do |word|
+        word.split("").each { |letter| freq[letter] += word.count(letter) }
+      end
