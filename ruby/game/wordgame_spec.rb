@@ -39,6 +39,7 @@ end
 
 
 
+
 # # describe Game do
 #   it "can check the accuracy of a guess" do
 #     game = Game.new("mycode")
