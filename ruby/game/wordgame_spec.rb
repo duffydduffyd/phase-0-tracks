@@ -17,12 +17,21 @@ describe Wordgame do
   end
 
   it "maps the mystery word array to underscores" do 
-  	expect(newgame.map_letter_to_underscore). to eq ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+  	expect(newgame.map_letter_to_underscore).to eq ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
   end
 
   it "it returns in user2's letter" do 
   	expect(newgame.user2_input("s"))
   end
+
+  it "determines if guessed letter is included in the word" do
+  	expect(newgame.include_letter("s")).to be true
+  end	 
+
+  it "determines if guess word is equal to mystery word" do 
+  	expect(newgame.guess_the_word("titaniclost")).to be false
+  end
+
 
 end
 
