@@ -1,6 +1,6 @@
 
 class Wordgame
-	attr_accessor :mysteryword, :guess
+	# attr_accessor :mysteryword, :guess
 
 	def initialize(word)
 		@word = word
