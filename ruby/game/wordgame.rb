@@ -1,11 +1,4 @@
 
-
-
-# 1) We need to have a word to guess (user input, class generated)
-# 2) We need to map _ for every letter
-# 3) 
-
-
 class Wordgame
 	attr_accessor :mysteryword, :guess
 
@@ -30,13 +23,13 @@ class Wordgame
 		# end
 	end
 
+	# attempt at comparing keys and values in hash as a solution 
 	# def hash_maker(word)
 	# 	@mysteryword_word_array = word.downcase.split('')
 	# 	# convert to hash with a default value of "_"
 	# 	@mysteryword_word_array.each { |index| @mysterword_hash[index] = '_' } # attempting to make a hash our of mystery_word_array with a default value of "_"
-	# 	p @mysteryword_hash  # ==> returning nil, i can't figure out why, like the keys are not going into the hash correctly
+	# 	p @mysteryword_hash  # ==> returning nil
 	# end	
-
 
 	# def map_letter_to_underscore()
 	# 	@underscore_array = @mysteryword_word_array.map {|letter| "_" } # ==> ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
@@ -109,12 +102,12 @@ class Wordgame
 		return @word
 	end
 
-	def guess_the_word(user2_word_guess) # ==> 
-		# input: user2 attempt to guess the word
-		# action: does the user@_word_guess match @mysteryword? 
-	  @mysteryword.eql?(user2_word_guess) # or use ===
-		# output: true or false? ==> true
-	end	
+	# def guess_the_word(user2_word_guess) # ==> 
+	# 	# input: user2 attempt to guess the word
+	# 	# action: does the user@_word_guess match @mysteryword? 
+	#   @mysteryword.eql?(user2_word_guess) # or use ===
+	# 	# output: true or false? ==> true
+	# end	
 
 	def guess_count
 		 @number_of_guesses -= 1
@@ -122,17 +115,62 @@ class Wordgame
 
 end	
 
-
-# a = [ "a", "b", "c" ]
-# a.each_index {|x| print x, " -- " }
-
 # Choose what word you want to use
 p "what is the word you want to use?"
 user_word = gets.chomp
 
-
+# Create new instance
 new_game = Wordgame.new(user_word) 
 p new_game.init_game
+
+
+# current output
+# game :> ruby wordgame.rb
+# "what is the word you want to use?"
+# peppery
+# "You Have 6 Number Of Guesses."
+# [Guess A Letter] -->
+# p
+# p_pp___
+# "You have 6 number of guesses left!"
+# [Guess A Letter] -->
+# e
+# _e__e__
+# "You have 5 number of guesses left!"
+# [Guess A Letter] -->
+# r
+# _____r_
+# "You have 4 number of guesses left!"
+# [Guess A Letter] -->
+# y
+# ______y
+# "You have 3 number of guesses left!"
+# [Guess A Letter] -->
+# d
+# _______
+# "You have 2 number of guesses left!"
+# [Guess A Letter] -->
+# r
+# "You have already guessed that letter"
+# "You have 2 number of guesses left!"
+# [Guess A Letter] -->
+# g
+# _______
+# "You have 1 number of guesses left!"
+# [Guess A Letter] -->
+# b
+# _______
+# "You have 0 number of guesses left!"
+# "The Word was: peppery"
+# "You lost!"
+
+
+
+
+
+
+
+
 # p new_game.mysteryword_array_getter
 # p "=============================="
 # p new_game.map_letter_to_underscore()
@@ -154,11 +192,14 @@ p new_game.init_game
 # p new_game.guess_the_word("titanic")
 # p new_game.map_guess_to_letter("s")
 # p map_guess_to_letter("s")
-
 # p new_game.hash_maker("thisismyword")
 
 
 # ---------- Scratch ideas
+
+
+# a = [ "a", "b", "c" ]
+# a.each_index {|x| print x, " -- " }
 
 # if @mysteryword_word_array.at[0] == @user2_guess(0) 
 # 	then @mysteryword_word_array[0] = @user2_guess(0)
@@ -191,8 +232,6 @@ p new_game.init_game
 
 		# Returns the index of the last object in self == to obj.
 # a.rindex { |x| x == "b" } #=> 3
-
-
 
 # a = %w{ a b c d e f }
 # a.keep_if { |v| v =~ /[aeiou]/ }  #=> ["a", "e"]
