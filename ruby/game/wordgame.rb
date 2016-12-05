@@ -7,14 +7,16 @@
 
 
 class Wordgame
-	# attr_reader :mysteryword, :guess
+	attr_accessor :mysteryword, :guess
 
 	def initialize(word)
+		@word = word
 		@number_of_guesses = word.length # ==> 7
 		@mysteryword = word.downcase # ==> "thisismyword"
 		@mysteryword_word_array = word.downcase.split('') # ==> ["t", "h", "i", "s", "i", "s", "m", "y", "w", "o", "r", "d"]
 		@underscore_array
 		@user2_guess
+		@mysterword_hash = {}
 	end
 
 
@@ -28,59 +30,132 @@ class Wordgame
 		# end
 	end
 
-	def map_letter_to_underscore
-		@underscore_array = @mysteryword_word_array.map {|letter| "_" } # ==> ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+	# def hash_maker(word)
+	# 	@mysteryword_word_array = word.downcase.split('')
+	# 	# convert to hash with a default value of "_"
+	# 	@mysteryword_word_array.each { |index| @mysterword_hash[index] = '_' } # attempting to make a hash our of mystery_word_array with a default value of "_"
+	# 	p @mysteryword_hash  # ==> returning nil, i can't figure out why, like the keys are not going into the hash correctly
+	# end	
+
+
+	# def map_letter_to_underscore()
+	# 	@underscore_array = @mysteryword_word_array.map {|letter| "_" } # ==> ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+	# 	return @underscore_array
+	# end
+
+	# def display_underscore_getter
+	# 	@underscore_array # ==> ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+	# end	
+
+	# def user2_input(letter_guess)
+	# 	@user2_guess = letter_guess.downcase # ==> "s"
+	# end	
+
+	# def include_letter(letter_guess)
+	# 	# this method determines if letter is in the array 
+	# 	@mysteryword_word_array.include?(letter_guess) # ==> letter_guess "s" => true
+	# 	# this method returns true or false
+	# end	 
+
+	# def map_guess_to_letter(letter_guess) # ==> "s"
+	# 	# input: user single letter guess @user2@_guess string 
+	# 	guess_letter_index =	@mysteryword_word_array.index { |x| x == letter_guess }  #=> returns 3, the first time the index of the letter "s" occurrs
+	# 	p guess_letter_index  # ==> 3
+	# 	# action: if the user2_guess string is equal to any string in @mystery_word_array then fill in that position in @underscore array that letter 
+	# 	new_under_array = @underscore_array.fill("letter_guess", guess_letter_index) # 
+	# 	p new_under_array # output: underscore_array with letter filled in
+	# end
+
+	def init_game
+
+		# indicates number of guesses based on word length
+		i = @word.length
+		# array is for user guesses
+		letter_guesses = []
+
+		p "You Have #{@number_of_guesses-1} Number Of Guesses."
+
+		# [1] as long as you have more than 1 guess, it will loop
+		while i >= 1 do
+			puts "[Guess A Letter] -->"
+			user_guess = gets.chomp
+
+			if letter_guesses.include?(user_guess)
+				p 'You have already guessed that letter'
+				i+=1
+			else
+				if user_guess == @word
+					return 'you won!'
+				end
+				# Need to reveal letter from underscore.
+				puts @word.tr("^#{user_guess}", "_")
+				letter_guesses.push(user_guess)
+			end
+			i -= 1
+			p "You have #{i} number of guesses left!"
+		end
+		# END [1]
+
+		# If Else letter_guesses include the original word
+		# find if the letters match the word
+		if letter_guesses.include?(@word)
+			p "The Word was: #{@word}"
+			return "You won!"
+		else
+			p "The Word was: #{@word}"
+			return "You lost!"
+		end
+
+		return @word
 	end
-
-	def display_underscore_getter
-		@underscore_array # ==> ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
-	end	
-
-	def user2_input(letter_guess)
-		@user2_guess = letter_guess.downcase # ==> "s"
-	end	
-
-	def include_letter(letter_guess)
-		# this method determines if letter is in the array 
-		@mysteryword_word_array.include?(letter_guess) # ==> letter_guess "s" => true
-		# this method returns true or false
-	end	 
-
-	def map_guess_to_letter(letter_guess) # ==> "s"
-		# input: user single letter guess @user2@_guess string 
-		guess_letter_index =	@mysteryword_word_array.index { |x| x == letter_guess }  #=> returns 3, the first time the index of the letter "s" occurrs
-		p guess_letter_index  # ==> 3
-		# action: if the user2_guess string is equal to any string in @mystery_word_array then fill in that position in @underscore array that letter 
-		new_under_array = @underscore_array.fill("letter_guess", guess_letter_index) # 
-		p new_under_array # output: underscore_array with letter filled in
-	end	
 
 	def guess_the_word(user2_word_guess) # ==> 
 		# input: user2 attempt to guess the word
 		# action: does the user@_word_guess match @mysteryword? 
 	  @mysteryword.eql?(user2_word_guess) # or use ===
-		# output: true or false? =
+		# output: true or false? ==> true
 	end	
 
+	def guess_count
+		 @number_of_guesses -= 1
+	end	 
 
 end	
 
 
+# a = [ "a", "b", "c" ]
+# a.each_index {|x| print x, " -- " }
+
+# Choose what word you want to use
+p "what is the word you want to use?"
+user_word = gets.chomp
 
 
+new_game = Wordgame.new(user_word) 
+p new_game.init_game
+# p new_game.mysteryword_array_getter
+# p "=============================="
+# p new_game.map_letter_to_underscore()
+# p "=============================="
+# p new_game.user2_input('d')
+# p "=============================="
+# p new_game.include_letter('d')
+# p "=============================="
+# p new_game.guess_the_word('f')
+# p "=============================="
+# p new_game.guess_count
 
-
-new_game = Wordgame.new('thisisMyword')
-
-# p new_game.getter_mystery_word
+# game_test = new_game.hash_maker("thisismyword")
+#  p new_game.getter_mystery_word 
 # p new_game.mysteryword_array_getter
 # p new_game.map_letter_to_underscore
 # p new_game.display_underscore_getter
 # p new_game.user2_input("s") 
 # p new_game.guess_the_word("titanic")
- p new_game.map_guess_to_letter("s")
+# p new_game.map_guess_to_letter("s")
 # p map_guess_to_letter("s")
 
+# p new_game.hash_maker("thisismyword")
 
 
 # ---------- Scratch ideas
@@ -106,7 +181,7 @@ new_game = Wordgame.new('thisisMyword')
 	# 					#p @underscore_array[0] = guess
 	# 				else 
 	# 					p "nope" 	
-	# 				end
+	# 				end 
 	# 			index += 1	
 	# 	end 
 
