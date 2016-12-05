@@ -94,6 +94,14 @@ class Wordgame
 		if letter_guesses.include?(@word)
 			p "The Word was: #{@word}"
 			return "You won!"
+		
+		# Another solution explored
+		#  placeholder = ''
+  	# sample_word.chars { |char| 
+  	#   placeholder += (guessed_words.include? char)? char : '_'
+  	# }
+	  #	placeholder	
+
 		else
 			p "The Word was: #{@word}"
 			return "You lost!"
