@@ -25,7 +25,7 @@ class VirusPredictor
  def predicted_deaths
    # predicted deaths is solely based on population density
    
-   case 
+  case 
    when @population_density >= 200 
      @number_of_deaths = (@population * 0.4).floor
    when @population_density >= 150 
@@ -47,15 +47,15 @@ class VirusPredictor
 
   case 
    when @population_density >= 200
-     @speed += 0.5
+     @speed = 0.5
    when @population_density >= 150
-     @speed += 1
+     @speed = 1
    when @population_density >= 100
-     @speed += 1.5
+     @speed = 1.5
    when @population_density >= 50
-     @speed += 2
+     @speed = 2
    else
-     @speed += 2.5
+     @speed = 2.5
    end
 
  end
@@ -136,7 +136,7 @@ end
 # Calling data from an external source and using hash iteration to run new instances 
 # of a class of outputing it's hash data. The block of an .each statement creates a new scope 
 # for your variable so you don't accidentally modify the original value.
-# Also "when" loops are pretty.
+# Also caaw "when" loops are pretty but don't work with boolean very well.
 
 
 #------------------
