@@ -11,6 +11,8 @@ class VirusPredictor
    @state = state_of_origin
    @population = population
    @population_density = population_density
+   @state
+   @speed
  end
  
  # Compilation of presdicted_deaths and speed_of_spread
@@ -23,16 +25,16 @@ class VirusPredictor
  def predicted_deaths
    # predicted deaths is solely based on population density
    
-   case @population_density
-   when >= 200
+   case 
+   when @population_density >= 200 
      @number_of_deaths = (@population * 0.4).floor
-   when >= 150
+   when @population_density >= 150 
      @number_of_deaths = (@population * 0.3).floor
-   when >= 100
+   when @population_density >= 100
      @number_of_deaths = (@population * 0.2).floor
-   when >= 50
+   when @population_density >= 50
      @number_of_deaths = (@population * 0.1).floor
-   else
+   else 
      @number_of_deaths = (@population * 0.05).floor
    end
  end
@@ -43,14 +45,14 @@ class VirusPredictor
    # by additional factors we haven't added into this functionality.
    @speed = 0.0
 
-  case @population_density
-   when >= 200
+  case 
+   when @population_density >= 200
      @speed += 0.5
-   when >= 150
+   when @population_density >= 150
      @speed += 1
-   when >= 100
+   when @population_density >= 100
      @speed += 1.5
-   when >= 50
+   when @population_density >= 50
      @speed += 2
    else
      @speed += 2.5
@@ -59,9 +61,11 @@ class VirusPredictor
  end
 
   def print_report
-    print "#{@state} will lose #{@number_of_deaths} people in this outbreak"
+    puts "#{@state} will lose #{@number_of_deaths} people in this outbreak"
     puts " and will spread across the state in #{@speed} months.\n\n"
   end 
+
+
 
 end
 
@@ -75,9 +79,11 @@ end
 # end
 
 STATE_DATA.each do |key, value|
- VirusPredictor.new(key, value[:population_density], value[:population]).print_report
+ # VirusPredictor.new(key, value[:population_density], value[:population]).print_report
+ outcomes = VirusPredictor.new(key, value[:population_density], value[:population])  
+ outcomes.virus_effects
+ outcomes.print_report
 end
-
 
 
 # VirusPredictor.new("state", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population]).virus_effects
@@ -128,7 +134,9 @@ end
 
 # What concept did you most solidify in this challenge?
 # Calling data from an external source and using hash iteration to run new instances 
-# of a class of outputing it's hash data. 
+# of a class of outputing it's hash data. The block of an .each statement creates a new scope 
+# for your variable so you don't accidentally modify the original value.
+# Also "when" loops are pretty.
 
 
 #------------------
