@@ -1,0 +1,26 @@
+sqlite> .tables
+coaches          foodfeedbackers
+
+sqlite> SELECT * FROM foodfeedbackers
+   ...> ;
+1|Sarah|Person|sarah@sarahperson.com|true|3
+2|Melissa|McPherson|melissa@mmm.com|true|1
+3|Sherry|Hunter|sherry@hunter.com||
+4|Bob|Maximun|bigbob@mail.com||
+5|Gerry|Kohen|gerry@coolguy.com|true|2
+6|Reece|Dogdude|reece@cooldog.com|true|1
+
+sqlite> SELECT * FROM coaches;                                                       1|Ali|Vincent|ali@alivincent.com
+2|Jillian|Michaels|jillian@thebiggestloser.com
+3|Nadia|Angerer|nadia@portlandthorns.com
+
+
+sqlite> UPDATE foodfeedbackers SET subscription="true" WHERE first_name="Sherry";
+sqlite> UPDATE foodfeedbackers SET coach_id=2  WHERE first_name="Sherry";
+sqlite> SELECT * FROM foodfeedbackers;
+1|Sarah|Person|sarah@sarahperson.com|true|3
+2|Melissa|McPherson|melissa@mmm.com|true|1
+3|Sherry|Hunter|sherry@hunter.com|true|2
+4|Bob|Maximun|bigbob@mail.com||
+5|Gerry|Kohen|gerry@coolguy.com|true|2
+6|Reece|Dogdude|reece@cooldog.com|true|1
