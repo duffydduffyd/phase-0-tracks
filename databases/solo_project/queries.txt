@@ -24,3 +24,11 @@ sqlite> SELECT * FROM foodfeedbackers;
 4|Bob|Maximun|bigbob@mail.com||
 5|Gerry|Kohen|gerry@coolguy.com|true|2
 6|Reece|Dogdude|reece@cooldog.com|true|1
+
+
+sqlite> SELECT * FROM foodfeedbackers, coaches WHERE foodfeedbackers.coach_id = coaches.id;
+1|Sarah|Person|sarah@sarahperson.com|true|3|3|Nadia|Angerer|nadia@portlandthorns.com
+2|Melissa|McPherson|melissa@mmm.com|true|1|1|Ali|Vincent|ali@alivincent.com
+3|Sherry|Hunter|sherry@hunter.com|true|2|2|Jillian|Michaels|jillian@thebiggestloser.com
+5|Gerry|Kohen|gerry@coolguy.com|true|2|2|Jillian|Michaels|jillian@thebiggestloser.com
+6|Reece|Dogdude|reece@cooldog.com|true|1|1|Ali|Vincent|ali@alivincent.com
