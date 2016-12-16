@@ -14,7 +14,7 @@ sqlite> SELECT * FROM coaches;                                                  
 2|Jillian|Michaels|jillian@thebiggestloser.com
 3|Nadia|Angerer|nadia@portlandthorns.com
 
-
+Add a coach with a foreign key ID of 2 to Sherry
 sqlite> UPDATE foodfeedbackers SET subscription="true" WHERE first_name="Sherry";
 sqlite> UPDATE foodfeedbackers SET coach_id=2  WHERE first_name="Sherry";
 sqlite> SELECT * FROM foodfeedbackers;
@@ -26,9 +26,106 @@ sqlite> SELECT * FROM foodfeedbackers;
 6|Reece|Dogdude|reece@cooldog.com|true|1
 
 
+Selects all the data by accessing the foreign key contents
 sqlite> SELECT * FROM foodfeedbackers, coaches WHERE foodfeedbackers.coach_id = coaches.id;
 1|Sarah|Person|sarah@sarahperson.com|true|3|3|Nadia|Angerer|nadia@portlandthorns.com
 2|Melissa|McPherson|melissa@mmm.com|true|1|1|Ali|Vincent|ali@alivincent.com
 3|Sherry|Hunter|sherry@hunter.com|true|2|2|Jillian|Michaels|jillian@thebiggestloser.com
 5|Gerry|Kohen|gerry@coolguy.com|true|2|2|Jillian|Michaels|jillian@thebiggestloser.com
 6|Reece|Dogdude|reece@cooldog.com|true|1|1|Ali|Vincent|ali@alivincent.com
+
+
+Selects the first name of Foodfeedbackers and the last name of their coaches
+sqlite> SELECT foodfeedbackers.first_name, coaches.last_name FROM foodfeedbackers JOIN coaches ON foodfeedbackers.coach_id = coaches.id;
+Sarah|Angerer
+Melissa|Vincent
+Sherry|Michaels
+Gerry|Michaels
+Reece|Vincent
+
+
+Selects the ID of Foodfeedbackers and the last name of their coaches
+sqlite> SELECT foodfeedbackers.id, coaches.last_name FROM foodfeedbackers JOIN coaches ON foodfeedbackers.coach_id = coaches.id;
+1|Angerer
+2|Vincent
+3|Michaels
+5|Michaels
+6|Vincent
+
+
+sqlite> .schema
+CREATE TABLE coaches (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255)
+,
+email VARCHAR(255)
+);
+CREATE TABLE foodfeedbackers (
+id INTEGER PRIMARY KEY,
+first_name VARCHAR(255),
+last_name VARCHAR(255),
+email VARCHAR(255),
+subscription BOOLEAN,
+coach_id INT,
+FOREIGN KEY (coach_id) REFERENCES coaches(id)
+);
+
+Research Join syntax
+https://www.sqlite.org/lang_select.html
+
+sqlite> SELECT id FROM foodfeedbackers WHERE subscription="true";
+1
+2
+3
+5
+6
+sqlite> SELECT id, first_name, last_name FROM foodfeedbackers WHERE subscription="true";
+1|Sarah|Person
+2|Melissa|McPherson
+3|Sherry|Hunter
+5|Gerry|Kohen
+6|Reece|Dogdude
+sqlite>
+
+sqlite> DELETE FROM foodfeedbackers WHERE last_name="Kohen";
+sqlite> SELECT * FROM foodfeedbackers;
+1|Sarah|Person|sarah@sarahperson.com|true|3
+2|Melissa|McPherson|melissa@mmm.com|true|1
+3|Sherry|Hunter|sherry@hunter.com|true|2
+4|Bob|Maximun|bigbob@mail.com||
+6|Reece|Dogdude|reece@cooldog.com|true|1
+
+
+sqlite> SELECT first_name, last_name FROM foodfeedbackers WHERE subscription is null;
+Bob|Maximun
+
+
+sqlite> SELECT EMP_ID, NAME, DEPT FROM COMPANY LEFT OUTER JOIN DEPARTMENT
+      ON COMPANY.ID = DEPARTMENT.EMP_ID;
+
+
+sqlite> SELECT * FROM foodfeedbackers CROSS JOIN coaches;
+1|Sarah|Person|sarah@sarahperson.com|true|3|1|Ali|Vincent|ali@alivincent.com
+1|Sarah|Person|sarah@sarahperson.com|true|3|2|Jillian|Michaels|jillian@thebiggestloser.com
+1|Sarah|Person|sarah@sarahperson.com|true|3|3|Nadia|Angerer|nadia@portlandthorns.com
+2|Melissa|McPherson|melissa@mmm.com|true|1|1|Ali|Vincent|ali@alivincent.com
+2|Melissa|McPherson|melissa@mmm.com|true|1|2|Jillian|Michaels|jillian@thebiggestloser.com
+2|Melissa|McPherson|melissa@mmm.com|true|1|3|Nadia|Angerer|nadia@portlandthorns.com
+3|Sherry|Hunter|sherry@hunter.com|true|2|1|Ali|Vincent|ali@alivincent.com
+3|Sherry|Hunter|sherry@hunter.com|true|2|2|Jillian|Michaels|jillian@thebiggestloser.com
+3|Sherry|Hunter|sherry@hunter.com|true|2|3|Nadia|Angerer|nadia@portlandthorns.com
+4|Bob|Maximun|bigbob@mail.com|||1|Ali|Vincent|ali@alivincent.com
+4|Bob|Maximun|bigbob@mail.com|||2|Jillian|Michaels|jillian@thebiggestloser.com
+4|Bob|Maximun|bigbob@mail.com|||3|Nadia|Angerer|nadia@portlandthorns.com
+6|Reece|Dogdude|reece@cooldog.com|true|1|1|Ali|Vincent|ali@alivincent.com
+6|Reece|Dogdude|reece@cooldog.com|true|1|2|Jillian|Michaels|jillian@thebiggestloser.com
+6|Reece|Dogdude|reece@cooldog.com|true|1|3|Nadia|Angerer|nadia@portlandthorns.com
+
+
+
+
+
+
+
+
