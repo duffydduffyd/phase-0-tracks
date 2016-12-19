@@ -123,7 +123,7 @@ uglydb.execute ("INSERT INTO sayings (saying) VALUES ('Let it Snow')")
 uglydb.execute ("INSERT INTO sayings (saying) VALUES ('Ho Ho Ho')")
 uglydb.execute ("INSERT INTO sayings (saying) VALUES ('Merry Christmas')")
 
-# # INSERT ONE NAME AND SWEATER DETAILS INTO NAMES TABLE FOR TESTING PURPOSES
+# # INSERT ONE NAME AND SWEATER DETAILS INTO NAMES TABLE FOR TESTING PURPOSES, THIS WORKS
 uglydb.execute ("INSERT INTO names (name, size, color_id, pattern_id, object_id, picture_id, saying_id) VALUES ('Amy Ainsworth', 'small', 1, 2, 1, 2, 1)")
 
 
@@ -220,9 +220,19 @@ puts Colorate.green("Your sweater is green.")
  end	
 
 # ADD THE SWEATERS INTO DATABASE, THIS IS NOT WORKING
-uglydb.execute ("INSERT INTO names (name, size, color_id, pattern_id, object_id, picture_id, saying_id) VALUES (#{sweater_owner_name}, #{sweater_owner_size}, #{sweater_color}, #{sweater_pattern}, #{sweater_object}, #{sweater_picture}, #{sweater_saying})")
+# uglydb.execute ("INSERT INTO names (name, size, color_id, pattern_id, object_id, picture_id, saying_id) VALUES (#{sweater_owner_name}, #{sweater_owner_size}, #{sweater_color}, #{sweater_pattern}, #{sweater_object}, #{sweater_picture}, #{sweater_saying})")
+
+# ADD THE SWEATERS INTO DATABASE, THIS IS NOT WORKING BUT DOES NOT THROW AN ERROR
+def create_sweater(uglydb, sweater_owner_name, sweater_owner_size, sweater_color, sweater_pattern, sweater_object, sweater_picture, sweater_saying)
+  uglydb.execute("INSERT INTO names (name, size, color_id, pattern_id, object_id, picture_id, saying_id) VALUES (?, ?, ?, ?, ?, ?, ?)", [sweater_owner_name, sweater_owner_size, sweater_color, sweater_pattern, sweater_object, sweater_picture, sweater_saying])
+end
+
 
 # COMPARE CURRENT ENTRY TO SWEATERS ENTRIES
+# ITERATE THROUGH LINES OF THE TABLE, COMPARE ID 1 WITH ID 2..TO THE END OF THE TABLE, 
+# THEN COMPARE LINE 2 WITH LINE 3..TO THE END OF THE TABLE. 
+# THERE MUST BE AN BETTER WAY THAN THIS. 
+
 
 # IF SWEATER IS THE SAME AS OTHER SWEATER THEN ALERT USER
 
