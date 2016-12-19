@@ -220,9 +220,9 @@ puts Colorate.green("Your sweater is green.")
  end	
 
 # ADD THE SWEATERS INTO DATABASE, THIS IS NOT WORKING
-uglydb.execute ("INSERT INTO names (name, size, color_id, pattern_id, object_id, picture_id, saying_id) VALUES (sweater_owner_name, sweater_owner_size, sweater_color, sweater_pattern, sweater_object, sweater_picture, sweater_saying)")
+uglydb.execute ("INSERT INTO names (name, size, color_id, pattern_id, object_id, picture_id, saying_id) VALUES (#{sweater_owner_name}, #{sweater_owner_size}, #{sweater_color}, #{sweater_pattern}, #{sweater_object}, #{sweater_picture}, #{sweater_saying})")
 
-# COMPARE CURRENT ENTRY TO OTHER SWEATERS
+# COMPARE CURRENT ENTRY TO SWEATERS ENTRIES
 
 # IF SWEATER IS THE SAME AS OTHER SWEATER THEN ALERT USER
 
