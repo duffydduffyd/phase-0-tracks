@@ -53,7 +53,6 @@ www.backcourtdribble.com
 Server sent this response to directing client to get requested resource to another URI with same method that used prior request. This has the same semantic than the 302 Found HTTP response code, with the exception that the user agent must not change the HTTP method used: if a POST was used in the first request, a POST must be used in the second request.
 
 
-Release 1
 
 
 
