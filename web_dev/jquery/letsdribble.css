@@ -1,0 +1,25 @@
+p {
+	color: #0B92C3;
+	max-width: 50%;
+}
+
+#dribblelogo {
+		max-width: 50%;
+    height: auto;
+}
+
+div {
+    height: 60px;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #0B92C3;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: Verdana, Arial, Sans-Serif;
+    opacity: 0.5;
+}
+
+
+
+
+
